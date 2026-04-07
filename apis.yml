@@ -1,5 +1,5 @@
 aid: energy-information-administration
-url: >-
+url: >2-
 
   https://raw.githubusercontent.com/api-evangelist/energy-information-administration/refs/heads/main/apis.yml
 apis:
@@ -11,13 +11,12 @@ apis:
     properties:
       - url: https://www.eia.gov/opendata
         type: Documentation
-    description: |-
-
-      The U.S. Energy Information Administration is committed to its free and
-      open data by making it available through an Application Programming
-      Interface (API) and its open data tools. EIAs API is multi-facetted and
-      contains the following time-series data sets organized by the main energy
-      categories. Browse the API or Translate APIv1 Series ID to ...
+    description: >-
+      The U.S. Energy Information Administration is committed to its free and open
+      data by making it available through an Application Programming Interface (API)
+      and its open data tools. EIAs API is multi-facetted and contains the following
+      time-series data sets organized by the main energy categories. Browse the API
+      or Translate APIv1 Series ID to ...
 name: Energy Information Administration
 tags:
   - Federal Government
@@ -28,11 +27,11 @@ access: 3rd-Party
 created: '2024-12-03'
 modified: '2026-03-16'
 position: Consumer
-description: |-
-  The U.S. Energy Information Administration is committed to its free and open
-  data by making it available through an Application Programming Interface (API)
-  and its open data tools. EIAs API is multi-facetted and contains the following
-  time-series data sets organized by the main energy categories.
+description: >-
+  The U.S. Energy Information Administration is committed to its free and open data
+  by making it available through an Application Programming Interface (API) and its
+  open data tools. EIAs API is multi-facetted and contains the following time-series
+  data sets organized by the main energy categories.
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
