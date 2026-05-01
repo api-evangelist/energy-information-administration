@@ -1,0 +1,427 @@
+openapi: 3.1.0
+info:
+  title: U.S. Energy Information Administration Open Data API
+  description: >-
+    The U.S. Energy Information Administration (EIA) Open Data API v2 provides
+    free programmatic access to EIA's open energy data, including time-series
+    datasets organized by energy category. The API uses a hierarchical route
+    structure where each route corresponds to a category or dataset, and
+    metadata about child routes, available facets, frequencies, and data
+    columns is returned by querying any parent route. An API key, obtained via
+    free registration at https://www.eia.gov/opendata/register.php, is required
+    on every request and must be supplied as a URL query parameter.
+  version: '2.1'
+  contact:
+    name: EIA Open Data
+    url: https://www.eia.gov/opendata/
+    email: EIA-OpenData@eia.gov
+  license:
+    name: EIA Copyrights and Reuse Policy
+    url: https://www.eia.gov/about/copyrights_reuse.php
+servers:
+  - url: https://api.eia.gov/v2
+    description: EIA Open Data API v2 production server
+security:
+  - apiKeyQuery: []
+tags:
+  - name: Discovery
+    description: Browse the API tree to discover available routes, facets, and metadata.
+  - name: Electricity
+    description: Electricity generation, retail sales, and balancing authority data.
+  - name: Natural Gas
+    description: Natural gas production, prices, storage, and trade data.
+  - name: Petroleum
+    description: Crude oil reserves, refining, consumption, and stocks data.
+  - name: Coal
+    description: Coal production, shipments, consumption, and trade data.
+  - name: Nuclear
+    description: Nuclear plant generator outage data.
+  - name: Total Energy
+    description: Comprehensive energy summaries across all sources.
+  - name: International
+    description: International energy statistics and projections.
+  - name: SEDS
+    description: State Energy Data System.
+  - name: CO2 Emissions
+    description: CO2 emissions aggregates by state and sector.
+paths:
+  /:
+    get:
+      operationId: getRoot
+      summary: List top-level data categories
+      description: >-
+        Returns metadata for the top-level routes available in the API,
+        including descriptions and child route identifiers.
+      tags:
+        - Discovery
+      responses:
+        '200':
+          description: Root metadata response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RouteMetadata'
+  /electricity:
+    get:
+      operationId: getElectricityRoutes
+      summary: List electricity child routes
+      description: >-
+        Returns the available child routes under the electricity category,
+        such as retail sales, generation, and balancing authority data.
+      tags:
+        - Electricity
+        - Discovery
+      responses:
+        '200':
+          description: Electricity routes metadata.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RouteMetadata'
+  /electricity/retail-sales/data:
+    get:
+      operationId: getElectricityRetailSales
+      summary: Query electricity retail sales time series
+      description: >-
+        Returns electricity retail sales time-series data filtered by
+        state, sector, frequency, and date range.
+      tags:
+        - Electricity
+      parameters:
+        - $ref: '#/components/parameters/Frequency'
+        - $ref: '#/components/parameters/DataArray'
+        - $ref: '#/components/parameters/Start'
+        - $ref: '#/components/parameters/End'
+        - $ref: '#/components/parameters/Offset'
+        - $ref: '#/components/parameters/Length'
+        - $ref: '#/components/parameters/Out'
+      responses:
+        '200':
+          description: Time-series response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SeriesResponse'
+  /natural-gas:
+    get:
+      operationId: getNaturalGasRoutes
+      summary: List natural gas child routes
+      description: Returns child routes for natural gas datasets.
+      tags:
+        - Natural Gas
+        - Discovery
+      responses:
+        '200':
+          description: Natural gas routes metadata.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RouteMetadata'
+  /natural-gas/pri/sum/data:
+    get:
+      operationId: getNaturalGasPriceSummary
+      summary: Query natural gas price summary
+      description: Returns natural gas price summary time series.
+      tags:
+        - Natural Gas
+      parameters:
+        - $ref: '#/components/parameters/Frequency'
+        - $ref: '#/components/parameters/DataArray'
+        - $ref: '#/components/parameters/Start'
+        - $ref: '#/components/parameters/End'
+        - $ref: '#/components/parameters/Offset'
+        - $ref: '#/components/parameters/Length'
+        - $ref: '#/components/parameters/Out'
+      responses:
+        '200':
+          description: Time-series response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SeriesResponse'
+  /petroleum:
+    get:
+      operationId: getPetroleumRoutes
+      summary: List petroleum child routes
+      description: Returns child routes for petroleum datasets.
+      tags:
+        - Petroleum
+        - Discovery
+      responses:
+        '200':
+          description: Petroleum routes metadata.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RouteMetadata'
+  /petroleum/pri/gnd/data:
+    get:
+      operationId: getPetroleumGasolineDieselPrices
+      summary: Query gasoline and diesel retail prices
+      description: Returns gasoline and diesel retail price time series.
+      tags:
+        - Petroleum
+      parameters:
+        - $ref: '#/components/parameters/Frequency'
+        - $ref: '#/components/parameters/DataArray'
+        - $ref: '#/components/parameters/Start'
+        - $ref: '#/components/parameters/End'
+        - $ref: '#/components/parameters/Offset'
+        - $ref: '#/components/parameters/Length'
+        - $ref: '#/components/parameters/Out'
+      responses:
+        '200':
+          description: Time-series response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SeriesResponse'
+  /coal:
+    get:
+      operationId: getCoalRoutes
+      summary: List coal child routes
+      description: Returns child routes for coal datasets.
+      tags:
+        - Coal
+        - Discovery
+      responses:
+        '200':
+          description: Coal routes metadata.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RouteMetadata'
+  /nuclear-outages:
+    get:
+      operationId: getNuclearOutagesRoutes
+      summary: List nuclear outage child routes
+      description: Returns child routes for nuclear plant generator outages.
+      tags:
+        - Nuclear
+        - Discovery
+      responses:
+        '200':
+          description: Nuclear outages routes metadata.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RouteMetadata'
+  /total-energy/data:
+    get:
+      operationId: getTotalEnergy
+      summary: Query total energy time series
+      description: Returns aggregated total energy time-series data across all sources.
+      tags:
+        - Total Energy
+      parameters:
+        - $ref: '#/components/parameters/Frequency'
+        - $ref: '#/components/parameters/DataArray'
+        - $ref: '#/components/parameters/Start'
+        - $ref: '#/components/parameters/End'
+        - $ref: '#/components/parameters/Offset'
+        - $ref: '#/components/parameters/Length'
+        - $ref: '#/components/parameters/Out'
+      responses:
+        '200':
+          description: Time-series response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SeriesResponse'
+  /international:
+    get:
+      operationId: getInternationalRoutes
+      summary: List international child routes
+      description: Returns child routes for international energy statistics.
+      tags:
+        - International
+        - Discovery
+      responses:
+        '200':
+          description: International routes metadata.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RouteMetadata'
+  /seds/data:
+    get:
+      operationId: getStateEnergyData
+      summary: Query State Energy Data System time series
+      description: Returns SEDS time-series data by state and energy series.
+      tags:
+        - SEDS
+      parameters:
+        - $ref: '#/components/parameters/Frequency'
+        - $ref: '#/components/parameters/DataArray'
+        - $ref: '#/components/parameters/Start'
+        - $ref: '#/components/parameters/End'
+        - $ref: '#/components/parameters/Offset'
+        - $ref: '#/components/parameters/Length'
+        - $ref: '#/components/parameters/Out'
+      responses:
+        '200':
+          description: Time-series response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SeriesResponse'
+  /co2-emissions/co2-emissions-aggregates/data:
+    get:
+      operationId: getCO2EmissionsAggregates
+      summary: Query CO2 emissions aggregates
+      description: Returns CO2 emissions aggregate time series by state, sector, and fuel.
+      tags:
+        - CO2 Emissions
+      parameters:
+        - $ref: '#/components/parameters/Frequency'
+        - $ref: '#/components/parameters/DataArray'
+        - $ref: '#/components/parameters/Start'
+        - $ref: '#/components/parameters/End'
+        - $ref: '#/components/parameters/Offset'
+        - $ref: '#/components/parameters/Length'
+        - $ref: '#/components/parameters/Out'
+      responses:
+        '200':
+          description: Time-series response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SeriesResponse'
+components:
+  securitySchemes:
+    apiKeyQuery:
+      type: apiKey
+      in: query
+      name: api_key
+      description: >-
+        Free API key obtained at https://www.eia.gov/opendata/register.php.
+        Must be supplied on every request as the api_key URL parameter.
+  parameters:
+    Frequency:
+      name: frequency
+      in: query
+      description: Periodicity of returned data (annual, monthly, quarterly, daily).
+      required: false
+      schema:
+        type: string
+        enum:
+          - annual
+          - quarterly
+          - monthly
+          - weekly
+          - daily
+          - hourly
+    DataArray:
+      name: data[]
+      in: query
+      description: Columns to include in the response (repeat for multiple columns).
+      required: false
+      schema:
+        type: array
+        items:
+          type: string
+      style: form
+      explode: true
+    Start:
+      name: start
+      in: query
+      description: Inclusive start of the date range (format depends on frequency, e.g. YYYY-MM-DD).
+      required: false
+      schema:
+        type: string
+    End:
+      name: end
+      in: query
+      description: Inclusive end of the date range (format depends on frequency, e.g. YYYY-MM-DD).
+      required: false
+      schema:
+        type: string
+    Offset:
+      name: offset
+      in: query
+      description: Pagination offset (zero-based row index).
+      required: false
+      schema:
+        type: integer
+        minimum: 0
+    Length:
+      name: length
+      in: query
+      description: Maximum number of rows to return (5,000 max for JSON, 300 max for XML).
+      required: false
+      schema:
+        type: integer
+        maximum: 5000
+    Out:
+      name: out
+      in: query
+      description: Output format.
+      required: false
+      schema:
+        type: string
+        enum:
+          - json
+          - xml
+        default: json
+  schemas:
+    RouteMetadata:
+      type: object
+      description: Metadata about a route, including its child routes, facets, and frequencies.
+      properties:
+        response:
+          type: object
+          properties:
+            id:
+              type: string
+            name:
+              type: string
+            description:
+              type: string
+            routes:
+              type: array
+              items:
+                type: object
+                properties:
+                  id:
+                    type: string
+                  name:
+                    type: string
+                  description:
+                    type: string
+            frequency:
+              type: array
+              items:
+                type: object
+            facets:
+              type: array
+              items:
+                type: object
+            data:
+              type: object
+        request:
+          type: object
+        apiVersion:
+          type: string
+    SeriesResponse:
+      type: object
+      description: Time-series data response.
+      properties:
+        response:
+          type: object
+          properties:
+            total:
+              type: integer
+              description: Total rows available for the query.
+            dateFormat:
+              type: string
+            frequency:
+              type: string
+            data:
+              type: array
+              items:
+                type: object
+                additionalProperties: true
+        request:
+          type: object
+        apiVersion:
+          type: string
