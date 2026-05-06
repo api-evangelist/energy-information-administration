@@ -1,0 +1,446 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: U.S. Energy Information Administration Open Data API
+  description: The U.S. Energy Information Administration (EIA) Open Data API v2 provides free programmatic access to EIA's
+    open energy data, including time-series datasets organized by energy category. The API uses a hierarchical route structure
+    where each route corresponds to a category or dataset, and metadata about child routes, available facets, frequencies,
+    and data columns is returned by querying any parent route. An API key, obtained via free registration at https://www.eia.gov/opendata/register.php,
+    is required on every request and must be supplied as a URL query parameter.
+  tags:
+  - Energy
+  - Information
+  - Administration
+  - API
+  created: '2026-05-06'
+  modified: '2026-05-06'
+capability:
+  consumes:
+  - type: http
+    namespace: energy-information-administration
+    baseUri: https://api.eia.gov/v2
+    description: U.S. Energy Information Administration Open Data API HTTP API.
+    authentication:
+      type: apikey
+      in: query
+      name: api_key
+      value: '{{ENERGY_INFORMATION_ADMINISTRATION_TOKEN}}'
+    resources:
+    - name: resource
+      path: /
+      operations:
+      - name: getroot
+        method: GET
+        description: List top-level data categories
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: electricity
+      path: /electricity
+      operations:
+      - name: getelectricityroutes
+        method: GET
+        description: List electricity child routes
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: electricity-retail-sales-data
+      path: /electricity/retail-sales/data
+      operations:
+      - name: getelectricityretailsales
+        method: GET
+        description: Query electricity retail sales time series
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: natural-gas
+      path: /natural-gas
+      operations:
+      - name: getnaturalgasroutes
+        method: GET
+        description: List natural gas child routes
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: natural-gas-pri-sum-data
+      path: /natural-gas/pri/sum/data
+      operations:
+      - name: getnaturalgaspricesummary
+        method: GET
+        description: Query natural gas price summary
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: petroleum
+      path: /petroleum
+      operations:
+      - name: getpetroleumroutes
+        method: GET
+        description: List petroleum child routes
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: petroleum-pri-gnd-data
+      path: /petroleum/pri/gnd/data
+      operations:
+      - name: getpetroleumgasolinedieselprices
+        method: GET
+        description: Query gasoline and diesel retail prices
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: coal
+      path: /coal
+      operations:
+      - name: getcoalroutes
+        method: GET
+        description: List coal child routes
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: nuclear-outages
+      path: /nuclear-outages
+      operations:
+      - name: getnuclearoutagesroutes
+        method: GET
+        description: List nuclear outage child routes
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: total-energy-data
+      path: /total-energy/data
+      operations:
+      - name: gettotalenergy
+        method: GET
+        description: Query total energy time series
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: international
+      path: /international
+      operations:
+      - name: getinternationalroutes
+        method: GET
+        description: List international child routes
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: seds-data
+      path: /seds/data
+      operations:
+      - name: getstateenergydata
+        method: GET
+        description: Query State Energy Data System time series
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: co2-emissions-co2-emissions-aggregates-data
+      path: /co2-emissions/co2-emissions-aggregates/data
+      operations:
+      - name: getco2emissionsaggregates
+        method: GET
+        description: Query CO2 emissions aggregates
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+  exposes:
+  - type: rest
+    port: 8080
+    namespace: energy-information-administration-rest
+    description: REST adapter for U.S. Energy Information Administration Open Data API.
+    resources:
+    - path: /
+      name: getroot
+      operations:
+      - method: GET
+        name: getroot
+        description: List top-level data categories
+        call: energy-information-administration.getroot
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /electricity
+      name: getelectricityroutes
+      operations:
+      - method: GET
+        name: getelectricityroutes
+        description: List electricity child routes
+        call: energy-information-administration.getelectricityroutes
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /electricity/retail-sales/data
+      name: getelectricityretailsales
+      operations:
+      - method: GET
+        name: getelectricityretailsales
+        description: Query electricity retail sales time series
+        call: energy-information-administration.getelectricityretailsales
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /natural-gas
+      name: getnaturalgasroutes
+      operations:
+      - method: GET
+        name: getnaturalgasroutes
+        description: List natural gas child routes
+        call: energy-information-administration.getnaturalgasroutes
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /natural-gas/pri/sum/data
+      name: getnaturalgaspricesummary
+      operations:
+      - method: GET
+        name: getnaturalgaspricesummary
+        description: Query natural gas price summary
+        call: energy-information-administration.getnaturalgaspricesummary
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /petroleum
+      name: getpetroleumroutes
+      operations:
+      - method: GET
+        name: getpetroleumroutes
+        description: List petroleum child routes
+        call: energy-information-administration.getpetroleumroutes
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /petroleum/pri/gnd/data
+      name: getpetroleumgasolinedieselprices
+      operations:
+      - method: GET
+        name: getpetroleumgasolinedieselprices
+        description: Query gasoline and diesel retail prices
+        call: energy-information-administration.getpetroleumgasolinedieselprices
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /coal
+      name: getcoalroutes
+      operations:
+      - method: GET
+        name: getcoalroutes
+        description: List coal child routes
+        call: energy-information-administration.getcoalroutes
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /nuclear-outages
+      name: getnuclearoutagesroutes
+      operations:
+      - method: GET
+        name: getnuclearoutagesroutes
+        description: List nuclear outage child routes
+        call: energy-information-administration.getnuclearoutagesroutes
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /total-energy/data
+      name: gettotalenergy
+      operations:
+      - method: GET
+        name: gettotalenergy
+        description: Query total energy time series
+        call: energy-information-administration.gettotalenergy
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /international
+      name: getinternationalroutes
+      operations:
+      - method: GET
+        name: getinternationalroutes
+        description: List international child routes
+        call: energy-information-administration.getinternationalroutes
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /seds/data
+      name: getstateenergydata
+      operations:
+      - method: GET
+        name: getstateenergydata
+        description: Query State Energy Data System time series
+        call: energy-information-administration.getstateenergydata
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /co2-emissions/co2-emissions-aggregates/data
+      name: getco2emissionsaggregates
+      operations:
+      - method: GET
+        name: getco2emissionsaggregates
+        description: Query CO2 emissions aggregates
+        call: energy-information-administration.getco2emissionsaggregates
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    port: 9090
+    namespace: energy-information-administration-mcp
+    transport: http
+    description: MCP adapter for U.S. Energy Information Administration Open Data API for AI agent use.
+    tools:
+    - name: getroot
+      description: List top-level data categories
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: energy-information-administration.getroot
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getelectricityroutes
+      description: List electricity child routes
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: energy-information-administration.getelectricityroutes
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getelectricityretailsales
+      description: Query electricity retail sales time series
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: energy-information-administration.getelectricityretailsales
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getnaturalgasroutes
+      description: List natural gas child routes
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: energy-information-administration.getnaturalgasroutes
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getnaturalgaspricesummary
+      description: Query natural gas price summary
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: energy-information-administration.getnaturalgaspricesummary
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getpetroleumroutes
+      description: List petroleum child routes
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: energy-information-administration.getpetroleumroutes
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getpetroleumgasolinedieselprices
+      description: Query gasoline and diesel retail prices
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: energy-information-administration.getpetroleumgasolinedieselprices
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getcoalroutes
+      description: List coal child routes
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: energy-information-administration.getcoalroutes
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getnuclearoutagesroutes
+      description: List nuclear outage child routes
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: energy-information-administration.getnuclearoutagesroutes
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: gettotalenergy
+      description: Query total energy time series
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: energy-information-administration.gettotalenergy
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getinternationalroutes
+      description: List international child routes
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: energy-information-administration.getinternationalroutes
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getstateenergydata
+      description: Query State Energy Data System time series
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: energy-information-administration.getstateenergydata
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getco2emissionsaggregates
+      description: Query CO2 emissions aggregates
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: energy-information-administration.getco2emissionsaggregates
+      outputParameters:
+      - type: object
+        mapping: $.
+binds:
+- namespace: env
+  keys:
+    ENERGY_INFORMATION_ADMINISTRATION_TOKEN: ENERGY_INFORMATION_ADMINISTRATION_TOKEN
