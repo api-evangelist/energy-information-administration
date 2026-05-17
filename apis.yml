@@ -6,7 +6,7 @@ tags:
   - Energy
   - Federal Government
   - Open Data
-type: Contract
+kind: contract
 image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 access: 3rd-Party
 created: '2024-12-03'
@@ -37,7 +37,7 @@ apis:
       - url: https://www.eia.gov/opendata/browser/
         type: API Browser
       - url: https://www.eia.gov/opendata/register.php
-        type: Signup
+        type: SignUp
       - url: openapi/energy-information-administration-open-data-api-openapi.yml
         type: OpenAPI
     description: >-
@@ -55,7 +55,7 @@ common:
     url: https://www.eia.gov/opendata/
   - type: API Browser
     url: https://www.eia.gov/opendata/browser/
-  - type: Signup
+  - type: SignUp
     url: https://www.eia.gov/opendata/register.php
   - type: Bulk Downloads
     url: https://www.eia.gov/opendata/bulkfiles.php
