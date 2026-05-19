@@ -1,0 +1,73 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: U.S. Energy Information Administration Open Data API — SEDS
+  description: 'U.S. Energy Information Administration Open Data API — SEDS. 1 operations. Lead operation: Query State Energy
+    Data System time series. Self-contained Naftiko capability covering one Energy Information Administration business surface.'
+  tags:
+  - Energy Information Administration
+  - SEDS
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    ENERGY_INFORMATION_ADMINISTRATION_API_KEY: ENERGY_INFORMATION_ADMINISTRATION_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: open-data-seds
+    baseUri: https://api.eia.gov/v2
+    description: U.S. Energy Information Administration Open Data API — SEDS business capability. Self-contained, no shared
+      references.
+    resources:
+    - name: seds-data
+      path: /seds/data
+      operations:
+      - name: getstateenergydata
+        method: GET
+        description: Query State Energy Data System time series
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: apikey
+      key: api_key
+      value: '{{env.ENERGY_INFORMATION_ADMINISTRATION_API_KEY}}'
+      placement: query
+  exposes:
+  - type: rest
+    namespace: open-data-seds-rest
+    port: 8080
+    description: REST adapter for U.S. Energy Information Administration Open Data API — SEDS. One Spectral-compliant resource
+      per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/seds/data
+      name: seds-data
+      description: REST surface for seds-data.
+      operations:
+      - method: GET
+        name: getstateenergydata
+        description: Query State Energy Data System time series
+        call: open-data-seds.getstateenergydata
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: open-data-seds-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for U.S. Energy Information Administration Open Data API — SEDS. One tool per consumed operation,
+      routed inline through this capability's consumes block.
+    tools:
+    - name: query-state-energy-data-system
+      description: Query State Energy Data System time series
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: open-data-seds.getstateenergydata
+      outputParameters:
+      - type: object
+        mapping: $.

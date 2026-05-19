@@ -1,0 +1,73 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: U.S. Energy Information Administration Open Data API — Coal
+  description: 'U.S. Energy Information Administration Open Data API — Coal. 1 operations. Lead operation: List coal child
+    routes. Self-contained Naftiko capability covering one Energy Information Administration business surface.'
+  tags:
+  - Energy Information Administration
+  - Coal
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    ENERGY_INFORMATION_ADMINISTRATION_API_KEY: ENERGY_INFORMATION_ADMINISTRATION_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: open-data-coal
+    baseUri: https://api.eia.gov/v2
+    description: U.S. Energy Information Administration Open Data API — Coal business capability. Self-contained, no shared
+      references.
+    resources:
+    - name: coal
+      path: /coal
+      operations:
+      - name: getcoalroutes
+        method: GET
+        description: List coal child routes
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: apikey
+      key: api_key
+      value: '{{env.ENERGY_INFORMATION_ADMINISTRATION_API_KEY}}'
+      placement: query
+  exposes:
+  - type: rest
+    namespace: open-data-coal-rest
+    port: 8080
+    description: REST adapter for U.S. Energy Information Administration Open Data API — Coal. One Spectral-compliant resource
+      per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/coal
+      name: coal
+      description: REST surface for coal.
+      operations:
+      - method: GET
+        name: getcoalroutes
+        description: List coal child routes
+        call: open-data-coal.getcoalroutes
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: open-data-coal-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for U.S. Energy Information Administration Open Data API — Coal. One tool per consumed operation,
+      routed inline through this capability's consumes block.
+    tools:
+    - name: list-coal-child-routes
+      description: List coal child routes
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: open-data-coal.getcoalroutes
+      outputParameters:
+      - type: object
+        mapping: $.

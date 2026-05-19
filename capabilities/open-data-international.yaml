@@ -1,0 +1,73 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: U.S. Energy Information Administration Open Data API — International
+  description: 'U.S. Energy Information Administration Open Data API — International. 1 operations. Lead operation: List international
+    child routes. Self-contained Naftiko capability covering one Energy Information Administration business surface.'
+  tags:
+  - Energy Information Administration
+  - International
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    ENERGY_INFORMATION_ADMINISTRATION_API_KEY: ENERGY_INFORMATION_ADMINISTRATION_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: open-data-international
+    baseUri: https://api.eia.gov/v2
+    description: U.S. Energy Information Administration Open Data API — International business capability. Self-contained,
+      no shared references.
+    resources:
+    - name: international
+      path: /international
+      operations:
+      - name: getinternationalroutes
+        method: GET
+        description: List international child routes
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: apikey
+      key: api_key
+      value: '{{env.ENERGY_INFORMATION_ADMINISTRATION_API_KEY}}'
+      placement: query
+  exposes:
+  - type: rest
+    namespace: open-data-international-rest
+    port: 8080
+    description: REST adapter for U.S. Energy Information Administration Open Data API — International. One Spectral-compliant
+      resource per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/international
+      name: international
+      description: REST surface for international.
+      operations:
+      - method: GET
+        name: getinternationalroutes
+        description: List international child routes
+        call: open-data-international.getinternationalroutes
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: open-data-international-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for U.S. Energy Information Administration Open Data API — International. One tool per consumed
+      operation, routed inline through this capability's consumes block.
+    tools:
+    - name: list-international-child-routes
+      description: List international child routes
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: open-data-international.getinternationalroutes
+      outputParameters:
+      - type: object
+        mapping: $.
