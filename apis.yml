@@ -2,9 +2,9 @@ aid: energy-information-administration
 name: Energy Information Administration
 url: https://raw.githubusercontent.com/api-evangelist/energy-information-administration/refs/heads/main/apis.yml
 tags:
-- Energy
-- Federal Government
-- Open Data
+  - Energy
+  - Federal Government
+  - Open Data
 kind: contract
 image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 access: 3rd-Party
@@ -17,66 +17,68 @@ description: The U.S. Energy Information Administration (EIA) is committed to it
   nuclear, renewables, total energy, international energy statistics, the State Energy Data System (SEDS), and CO2 emissions
   aggregates.
 apis:
-- aid: energy-information-administration:open-data-api
-  name: EIA Open Data API
-  tags:
-  - Energy
-  - Federal Government
-  - Open Data
-  - Time Series
-  image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
-  baseURL: https://api.eia.gov/v2
-  humanURL: https://www.eia.gov/opendata/
-  properties:
-  - url: https://www.eia.gov/opendata/
-    type: Documentation
-  - url: https://www.eia.gov/opendata/browser/
-    type: API Browser
-  - url: https://www.eia.gov/opendata/register.php
-    type: SignUp
-  - url: openapi/energy-information-administration-open-data-api-openapi.yml
-    type: OpenAPI
-  - type: NaftikoCapability
-    url: capabilities/open-data-co2-emissions.yaml
-  - type: NaftikoCapability
-    url: capabilities/open-data-coal.yaml
-  - type: NaftikoCapability
-    url: capabilities/open-data-discovery.yaml
-  - type: NaftikoCapability
-    url: capabilities/open-data-electricity.yaml
-  - type: NaftikoCapability
-    url: capabilities/open-data-international.yaml
-  - type: NaftikoCapability
-    url: capabilities/open-data-natural-gas.yaml
-  - type: NaftikoCapability
-    url: capabilities/open-data-nuclear.yaml
-  - type: NaftikoCapability
-    url: capabilities/open-data-petroleum.yaml
-  - type: NaftikoCapability
-    url: capabilities/open-data-seds.yaml
-  - type: NaftikoCapability
-    url: capabilities/open-data-total-energy.yaml
-  description: The EIA Open Data API v2 provides programmatic access to free U.S. energy time-series data through a hierarchical
-    route structure organized by energy category. An API key is required (free registration) and is passed as a URL query
-    parameter on every request. Responses include rich metadata for navigating child routes, facets, frequencies, and available
-    data columns. The API supports JSON (default) and XML output, with up to 5,000 rows per request for JSON and 300 rows
-    for XML.
+  - aid: energy-information-administration:open-data-api
+    name: EIA Open Data API
+    tags:
+    - Energy
+    - Federal Government
+    - Open Data
+    - Time Series
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    baseURL: https://api.eia.gov/v2
+    humanURL: https://www.eia.gov/opendata/
+    properties:
+    - url: https://www.eia.gov/opendata/
+      type: Documentation
+    - url: https://www.eia.gov/opendata/browser/
+      type: API Browser
+    - url: https://www.eia.gov/opendata/register.php
+      type: SignUp
+    - url: openapi/energy-information-administration-open-data-api-openapi.yml
+      type: OpenAPI
+    - type: NaftikoCapability
+      url: capabilities/open-data-co2-emissions.yaml
+    - type: NaftikoCapability
+      url: capabilities/open-data-coal.yaml
+    - type: NaftikoCapability
+      url: capabilities/open-data-discovery.yaml
+    - type: NaftikoCapability
+      url: capabilities/open-data-electricity.yaml
+    - type: NaftikoCapability
+      url: capabilities/open-data-international.yaml
+    - type: NaftikoCapability
+      url: capabilities/open-data-natural-gas.yaml
+    - type: NaftikoCapability
+      url: capabilities/open-data-nuclear.yaml
+    - type: NaftikoCapability
+      url: capabilities/open-data-petroleum.yaml
+    - type: NaftikoCapability
+      url: capabilities/open-data-seds.yaml
+    - type: NaftikoCapability
+      url: capabilities/open-data-total-energy.yaml
+    description: The EIA Open Data API v2 provides programmatic access to free U.S. energy time-series data through a hierarchical
+      route structure organized by energy category. An API key is required (free registration) and is passed as a URL query
+      parameter on every request. Responses include rich metadata for navigating child routes, facets, frequencies, and available
+      data columns. The API supports JSON (default) and XML output, with up to 5,000 rows per request for JSON and 300 rows
+      for XML.
 common:
-- type: LinkedIn
-  url: https://www.linkedin.com/company/u-s-energy-information-administration
-- type: Website
-  url: https://www.eia.gov
-- type: Documentation
-  url: https://www.eia.gov/opendata/
-- type: API Browser
-  url: https://www.eia.gov/opendata/browser/
-- type: SignUp
-  url: https://www.eia.gov/opendata/register.php
-- type: Bulk Downloads
-  url: https://www.eia.gov/opendata/bulkfiles.php
-- type: Excel Add-in
-  url: https://www.eia.gov/opendata/excel/
+  - type: GitHubOrganization
+    url: https://github.com/eiagov
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/u-s-energy-information-administration
+  - type: Website
+    url: https://www.eia.gov
+  - type: Documentation
+    url: https://www.eia.gov/opendata/
+  - type: API Browser
+    url: https://www.eia.gov/opendata/browser/
+  - type: SignUp
+    url: https://www.eia.gov/opendata/register.php
+  - type: Bulk Downloads
+    url: https://www.eia.gov/opendata/bulkfiles.php
+  - type: Excel Add-in
+    url: https://www.eia.gov/opendata/excel/
 maintainers:
-- FN: Kin Lane
-  email: kin@apievangelist.com
+  - FN: Kin Lane
+    email: kin@apievangelist.com
 specificationVersion: '0.20'
