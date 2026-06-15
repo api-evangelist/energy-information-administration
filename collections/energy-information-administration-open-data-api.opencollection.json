@@ -1,0 +1,505 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "U.S. Energy Information Administration Open Data API",
+    "version": "2.1"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "api_key",
+      "value": "{{api_key}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Discovery",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List top-level data categories",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.eia.gov/v2/"
+          },
+          "docs": "Returns metadata for the top-level routes available in the API, including descriptions and child route identifiers."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Electricity",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List electricity child routes",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.eia.gov/v2/electricity"
+          },
+          "docs": "Returns the available child routes under the electricity category, such as retail sales, generation, and balancing authority data."
+        },
+        {
+          "info": {
+            "name": "Query electricity retail sales time series",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.eia.gov/v2/electricity/retail-sales/data",
+            "params": [
+              {
+                "name": "frequency",
+                "value": "",
+                "type": "query",
+                "description": "Periodicity of returned data (annual, monthly, quarterly, daily)."
+              },
+              {
+                "name": "data[]",
+                "value": "",
+                "type": "query",
+                "description": "Columns to include in the response (repeat for multiple columns)."
+              },
+              {
+                "name": "start",
+                "value": "",
+                "type": "query",
+                "description": "Inclusive start of the date range (format depends on frequency, e.g. YYYY-MM-DD)."
+              },
+              {
+                "name": "end",
+                "value": "",
+                "type": "query",
+                "description": "Inclusive end of the date range (format depends on frequency, e.g. YYYY-MM-DD)."
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "Pagination offset (zero-based row index)."
+              },
+              {
+                "name": "length",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of rows to return (5,000 max for JSON, 300 max for XML)."
+              },
+              {
+                "name": "out",
+                "value": "",
+                "type": "query",
+                "description": "Output format."
+              }
+            ]
+          },
+          "docs": "Returns electricity retail sales time-series data filtered by state, sector, frequency, and date range."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Natural Gas",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List natural gas child routes",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.eia.gov/v2/natural-gas"
+          },
+          "docs": "Returns child routes for natural gas datasets."
+        },
+        {
+          "info": {
+            "name": "Query natural gas price summary",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.eia.gov/v2/natural-gas/pri/sum/data",
+            "params": [
+              {
+                "name": "frequency",
+                "value": "",
+                "type": "query",
+                "description": "Periodicity of returned data (annual, monthly, quarterly, daily)."
+              },
+              {
+                "name": "data[]",
+                "value": "",
+                "type": "query",
+                "description": "Columns to include in the response (repeat for multiple columns)."
+              },
+              {
+                "name": "start",
+                "value": "",
+                "type": "query",
+                "description": "Inclusive start of the date range (format depends on frequency, e.g. YYYY-MM-DD)."
+              },
+              {
+                "name": "end",
+                "value": "",
+                "type": "query",
+                "description": "Inclusive end of the date range (format depends on frequency, e.g. YYYY-MM-DD)."
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "Pagination offset (zero-based row index)."
+              },
+              {
+                "name": "length",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of rows to return (5,000 max for JSON, 300 max for XML)."
+              },
+              {
+                "name": "out",
+                "value": "",
+                "type": "query",
+                "description": "Output format."
+              }
+            ]
+          },
+          "docs": "Returns natural gas price summary time series."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Petroleum",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List petroleum child routes",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.eia.gov/v2/petroleum"
+          },
+          "docs": "Returns child routes for petroleum datasets."
+        },
+        {
+          "info": {
+            "name": "Query gasoline and diesel retail prices",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.eia.gov/v2/petroleum/pri/gnd/data",
+            "params": [
+              {
+                "name": "frequency",
+                "value": "",
+                "type": "query",
+                "description": "Periodicity of returned data (annual, monthly, quarterly, daily)."
+              },
+              {
+                "name": "data[]",
+                "value": "",
+                "type": "query",
+                "description": "Columns to include in the response (repeat for multiple columns)."
+              },
+              {
+                "name": "start",
+                "value": "",
+                "type": "query",
+                "description": "Inclusive start of the date range (format depends on frequency, e.g. YYYY-MM-DD)."
+              },
+              {
+                "name": "end",
+                "value": "",
+                "type": "query",
+                "description": "Inclusive end of the date range (format depends on frequency, e.g. YYYY-MM-DD)."
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "Pagination offset (zero-based row index)."
+              },
+              {
+                "name": "length",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of rows to return (5,000 max for JSON, 300 max for XML)."
+              },
+              {
+                "name": "out",
+                "value": "",
+                "type": "query",
+                "description": "Output format."
+              }
+            ]
+          },
+          "docs": "Returns gasoline and diesel retail price time series."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Coal",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List coal child routes",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.eia.gov/v2/coal"
+          },
+          "docs": "Returns child routes for coal datasets."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Nuclear",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List nuclear outage child routes",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.eia.gov/v2/nuclear-outages"
+          },
+          "docs": "Returns child routes for nuclear plant generator outages."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Total Energy",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Query total energy time series",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.eia.gov/v2/total-energy/data",
+            "params": [
+              {
+                "name": "frequency",
+                "value": "",
+                "type": "query",
+                "description": "Periodicity of returned data (annual, monthly, quarterly, daily)."
+              },
+              {
+                "name": "data[]",
+                "value": "",
+                "type": "query",
+                "description": "Columns to include in the response (repeat for multiple columns)."
+              },
+              {
+                "name": "start",
+                "value": "",
+                "type": "query",
+                "description": "Inclusive start of the date range (format depends on frequency, e.g. YYYY-MM-DD)."
+              },
+              {
+                "name": "end",
+                "value": "",
+                "type": "query",
+                "description": "Inclusive end of the date range (format depends on frequency, e.g. YYYY-MM-DD)."
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "Pagination offset (zero-based row index)."
+              },
+              {
+                "name": "length",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of rows to return (5,000 max for JSON, 300 max for XML)."
+              },
+              {
+                "name": "out",
+                "value": "",
+                "type": "query",
+                "description": "Output format."
+              }
+            ]
+          },
+          "docs": "Returns aggregated total energy time-series data across all sources."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "International",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List international child routes",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.eia.gov/v2/international"
+          },
+          "docs": "Returns child routes for international energy statistics."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "SEDS",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Query State Energy Data System time series",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.eia.gov/v2/seds/data",
+            "params": [
+              {
+                "name": "frequency",
+                "value": "",
+                "type": "query",
+                "description": "Periodicity of returned data (annual, monthly, quarterly, daily)."
+              },
+              {
+                "name": "data[]",
+                "value": "",
+                "type": "query",
+                "description": "Columns to include in the response (repeat for multiple columns)."
+              },
+              {
+                "name": "start",
+                "value": "",
+                "type": "query",
+                "description": "Inclusive start of the date range (format depends on frequency, e.g. YYYY-MM-DD)."
+              },
+              {
+                "name": "end",
+                "value": "",
+                "type": "query",
+                "description": "Inclusive end of the date range (format depends on frequency, e.g. YYYY-MM-DD)."
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "Pagination offset (zero-based row index)."
+              },
+              {
+                "name": "length",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of rows to return (5,000 max for JSON, 300 max for XML)."
+              },
+              {
+                "name": "out",
+                "value": "",
+                "type": "query",
+                "description": "Output format."
+              }
+            ]
+          },
+          "docs": "Returns SEDS time-series data by state and energy series."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "CO2 Emissions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Query CO2 emissions aggregates",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.eia.gov/v2/co2-emissions/co2-emissions-aggregates/data",
+            "params": [
+              {
+                "name": "frequency",
+                "value": "",
+                "type": "query",
+                "description": "Periodicity of returned data (annual, monthly, quarterly, daily)."
+              },
+              {
+                "name": "data[]",
+                "value": "",
+                "type": "query",
+                "description": "Columns to include in the response (repeat for multiple columns)."
+              },
+              {
+                "name": "start",
+                "value": "",
+                "type": "query",
+                "description": "Inclusive start of the date range (format depends on frequency, e.g. YYYY-MM-DD)."
+              },
+              {
+                "name": "end",
+                "value": "",
+                "type": "query",
+                "description": "Inclusive end of the date range (format depends on frequency, e.g. YYYY-MM-DD)."
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "Pagination offset (zero-based row index)."
+              },
+              {
+                "name": "length",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of rows to return (5,000 max for JSON, 300 max for XML)."
+              },
+              {
+                "name": "out",
+                "value": "",
+                "type": "query",
+                "description": "Output format."
+              }
+            ]
+          },
+          "docs": "Returns CO2 emissions aggregate time series by state, sector, and fuel."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

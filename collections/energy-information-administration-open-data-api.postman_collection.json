@@ -1,0 +1,2083 @@
+{
+  "item": [
+    {
+      "id": "dc5ddfed-c528-4314-a752-05a5cc7714c8",
+      "name": "Discovery",
+      "description": {
+        "content": "Browse the API tree to discover available routes, facets, and metadata.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "6d2bfbed-bf7e-496c-8b17-990dec06934e",
+          "name": "List top-level data categories",
+          "request": {
+            "name": "List top-level data categories",
+            "description": {
+              "content": "Returns metadata for the top-level routes available in the API, including descriptions and child route identifiers.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ee5525ea-6858-4a65-8db9-8dcecf44bc18",
+              "name": "Root metadata response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"response\": {\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"description\": \"string\",\n    \"routes\": [\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"description\": \"string\"\n      },\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"description\": \"string\"\n      }\n    ],\n    \"data\": {}\n  },\n  \"request\": {},\n  \"apiVersion\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "050ba872-0257-4830-bcd3-a4f15c451834",
+          "name": "List electricity child routes",
+          "request": {
+            "name": "List electricity child routes",
+            "description": {
+              "content": "Returns the available child routes under the electricity category, such as retail sales, generation, and balancing authority data.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "electricity"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9e7f3a1b-9a77-455f-9fdb-c24e8de7f42e",
+              "name": "Electricity routes metadata.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "electricity"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"response\": {\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"description\": \"string\",\n    \"routes\": [\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"description\": \"string\"\n      },\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"description\": \"string\"\n      }\n    ],\n    \"data\": {}\n  },\n  \"request\": {},\n  \"apiVersion\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d76cc3ec-a4f6-4411-8f00-04426d9e623c",
+          "name": "List natural gas child routes",
+          "request": {
+            "name": "List natural gas child routes",
+            "description": {
+              "content": "Returns child routes for natural gas datasets.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "natural-gas"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "42e91b9d-5874-45d3-9498-c09aeb1b8a40",
+              "name": "Natural gas routes metadata.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "natural-gas"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"response\": {\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"description\": \"string\",\n    \"routes\": [\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"description\": \"string\"\n      },\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"description\": \"string\"\n      }\n    ],\n    \"data\": {}\n  },\n  \"request\": {},\n  \"apiVersion\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "063a26f5-1b48-4fd9-abd2-086f4b022ee6",
+          "name": "List petroleum child routes",
+          "request": {
+            "name": "List petroleum child routes",
+            "description": {
+              "content": "Returns child routes for petroleum datasets.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "petroleum"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "94524a47-9d17-4c10-95b7-a3b12a76ade3",
+              "name": "Petroleum routes metadata.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "petroleum"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"response\": {\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"description\": \"string\",\n    \"routes\": [\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"description\": \"string\"\n      },\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"description\": \"string\"\n      }\n    ],\n    \"data\": {}\n  },\n  \"request\": {},\n  \"apiVersion\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d8379bca-7d1f-4af5-93a5-23400aa7d79d",
+          "name": "List coal child routes",
+          "request": {
+            "name": "List coal child routes",
+            "description": {
+              "content": "Returns child routes for coal datasets.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "coal"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "892883a1-29c1-4130-850b-b569d04bdde8",
+              "name": "Coal routes metadata.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "coal"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"response\": {\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"description\": \"string\",\n    \"routes\": [\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"description\": \"string\"\n      },\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"description\": \"string\"\n      }\n    ],\n    \"data\": {}\n  },\n  \"request\": {},\n  \"apiVersion\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "fea6ca33-786c-461f-9d29-180debbaaddc",
+          "name": "List nuclear outage child routes",
+          "request": {
+            "name": "List nuclear outage child routes",
+            "description": {
+              "content": "Returns child routes for nuclear plant generator outages.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "nuclear-outages"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d5b030cf-a758-4605-b619-c3906477a3e8",
+              "name": "Nuclear outages routes metadata.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "nuclear-outages"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"response\": {\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"description\": \"string\",\n    \"routes\": [\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"description\": \"string\"\n      },\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"description\": \"string\"\n      }\n    ],\n    \"data\": {}\n  },\n  \"request\": {},\n  \"apiVersion\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4ecb031c-7e9c-4225-9e73-f2165d281e7a",
+          "name": "List international child routes",
+          "request": {
+            "name": "List international child routes",
+            "description": {
+              "content": "Returns child routes for international energy statistics.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "international"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "80d02593-4f53-4b1b-ae2c-82cb09d6b3d7",
+              "name": "International routes metadata.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "international"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"response\": {\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"description\": \"string\",\n    \"routes\": [\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"description\": \"string\"\n      },\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"description\": \"string\"\n      }\n    ],\n    \"data\": {}\n  },\n  \"request\": {},\n  \"apiVersion\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "ecfcf83a-d133-49f1-b6c7-cbdd43d6708a",
+      "name": "Electricity",
+      "description": {
+        "content": "Electricity generation, retail sales, and balancing authority data.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "0d28b8ac-1139-4206-a720-701ad9a93912",
+          "name": "List electricity child routes",
+          "request": {
+            "name": "List electricity child routes",
+            "description": {
+              "content": "Returns the available child routes under the electricity category, such as retail sales, generation, and balancing authority data.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "electricity"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f85c4ca1-196a-4d3f-914b-ebaef20873ee",
+              "name": "Electricity routes metadata.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "electricity"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"response\": {\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"description\": \"string\",\n    \"routes\": [\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"description\": \"string\"\n      },\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"description\": \"string\"\n      }\n    ],\n    \"data\": {}\n  },\n  \"request\": {},\n  \"apiVersion\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ed633698-9d7c-4103-b823-435e88e5da46",
+          "name": "Query electricity retail sales time series",
+          "request": {
+            "name": "Query electricity retail sales time series",
+            "description": {
+              "content": "Returns electricity retail sales time-series data filtered by state, sector, frequency, and date range.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "electricity",
+                "retail-sales",
+                "data"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "frequency",
+                  "value": "<string>",
+                  "description": "Periodicity of returned data (annual, monthly, quarterly, daily)."
+                },
+                {
+                  "disabled": false,
+                  "key": "data[]",
+                  "value": "<string>",
+                  "description": "Columns to include in the response (repeat for multiple columns)."
+                },
+                {
+                  "disabled": false,
+                  "key": "data[]",
+                  "value": "<string>",
+                  "description": "Columns to include in the response (repeat for multiple columns)."
+                },
+                {
+                  "disabled": false,
+                  "key": "start",
+                  "value": "<string>",
+                  "description": "Inclusive start of the date range (format depends on frequency, e.g. YYYY-MM-DD)."
+                },
+                {
+                  "disabled": false,
+                  "key": "end",
+                  "value": "<string>",
+                  "description": "Inclusive end of the date range (format depends on frequency, e.g. YYYY-MM-DD)."
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "<integer>",
+                  "description": "Pagination offset (zero-based row index)."
+                },
+                {
+                  "disabled": false,
+                  "key": "length",
+                  "value": "<integer>",
+                  "description": "Maximum number of rows to return (5,000 max for JSON, 300 max for XML)."
+                },
+                {
+                  "disabled": false,
+                  "key": "out",
+                  "value": "json",
+                  "description": "Output format."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ad3f6731-3d82-4a12-bc6f-f83673588771",
+              "name": "Time-series response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "electricity",
+                    "retail-sales",
+                    "data"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "frequency",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "data[]",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "data[]",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "start",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "end",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "length",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "out",
+                      "value": "json"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"response\": {\n    \"total\": 3119,\n    \"dateFormat\": \"string\",\n    \"frequency\": \"string\",\n    \"data\": [\n      {\n        \"key_0\": \"string\"\n      },\n      {\n        \"key_0\": \"string\"\n      }\n    ]\n  },\n  \"request\": {},\n  \"apiVersion\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "6106b882-3cf2-4620-b8ea-d35d8eab1707",
+      "name": "Natural Gas",
+      "description": {
+        "content": "Natural gas production, prices, storage, and trade data.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "db2ed713-55c1-49ca-9bdc-7be6c7dd711b",
+          "name": "List natural gas child routes",
+          "request": {
+            "name": "List natural gas child routes",
+            "description": {
+              "content": "Returns child routes for natural gas datasets.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "natural-gas"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "43f29ab7-0486-4d5f-b3f0-332330cc5fad",
+              "name": "Natural gas routes metadata.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "natural-gas"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"response\": {\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"description\": \"string\",\n    \"routes\": [\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"description\": \"string\"\n      },\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"description\": \"string\"\n      }\n    ],\n    \"data\": {}\n  },\n  \"request\": {},\n  \"apiVersion\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "199a46f5-f2f6-4e60-8eb3-c6699a636123",
+          "name": "Query natural gas price summary",
+          "request": {
+            "name": "Query natural gas price summary",
+            "description": {
+              "content": "Returns natural gas price summary time series.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "natural-gas",
+                "pri",
+                "sum",
+                "data"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "frequency",
+                  "value": "<string>",
+                  "description": "Periodicity of returned data (annual, monthly, quarterly, daily)."
+                },
+                {
+                  "disabled": false,
+                  "key": "data[]",
+                  "value": "<string>",
+                  "description": "Columns to include in the response (repeat for multiple columns)."
+                },
+                {
+                  "disabled": false,
+                  "key": "data[]",
+                  "value": "<string>",
+                  "description": "Columns to include in the response (repeat for multiple columns)."
+                },
+                {
+                  "disabled": false,
+                  "key": "start",
+                  "value": "<string>",
+                  "description": "Inclusive start of the date range (format depends on frequency, e.g. YYYY-MM-DD)."
+                },
+                {
+                  "disabled": false,
+                  "key": "end",
+                  "value": "<string>",
+                  "description": "Inclusive end of the date range (format depends on frequency, e.g. YYYY-MM-DD)."
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "<integer>",
+                  "description": "Pagination offset (zero-based row index)."
+                },
+                {
+                  "disabled": false,
+                  "key": "length",
+                  "value": "<integer>",
+                  "description": "Maximum number of rows to return (5,000 max for JSON, 300 max for XML)."
+                },
+                {
+                  "disabled": false,
+                  "key": "out",
+                  "value": "json",
+                  "description": "Output format."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "45e5e445-b9b4-4ba4-bebd-4617f98b86e0",
+              "name": "Time-series response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "natural-gas",
+                    "pri",
+                    "sum",
+                    "data"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "frequency",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "data[]",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "data[]",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "start",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "end",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "length",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "out",
+                      "value": "json"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"response\": {\n    \"total\": 3119,\n    \"dateFormat\": \"string\",\n    \"frequency\": \"string\",\n    \"data\": [\n      {\n        \"key_0\": \"string\"\n      },\n      {\n        \"key_0\": \"string\"\n      }\n    ]\n  },\n  \"request\": {},\n  \"apiVersion\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "cc54518b-fdfe-4a12-b837-2a9169039c37",
+      "name": "Petroleum",
+      "description": {
+        "content": "Crude oil reserves, refining, consumption, and stocks data.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "1341f3b3-27c8-46f2-ad28-a53879f853bb",
+          "name": "List petroleum child routes",
+          "request": {
+            "name": "List petroleum child routes",
+            "description": {
+              "content": "Returns child routes for petroleum datasets.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "petroleum"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "17598b22-ec90-49c0-8528-a67d620c1140",
+              "name": "Petroleum routes metadata.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "petroleum"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"response\": {\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"description\": \"string\",\n    \"routes\": [\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"description\": \"string\"\n      },\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"description\": \"string\"\n      }\n    ],\n    \"data\": {}\n  },\n  \"request\": {},\n  \"apiVersion\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "aaf96a98-71bb-4abe-b360-0067aa6ba7a1",
+          "name": "Query gasoline and diesel retail prices",
+          "request": {
+            "name": "Query gasoline and diesel retail prices",
+            "description": {
+              "content": "Returns gasoline and diesel retail price time series.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "petroleum",
+                "pri",
+                "gnd",
+                "data"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "frequency",
+                  "value": "<string>",
+                  "description": "Periodicity of returned data (annual, monthly, quarterly, daily)."
+                },
+                {
+                  "disabled": false,
+                  "key": "data[]",
+                  "value": "<string>",
+                  "description": "Columns to include in the response (repeat for multiple columns)."
+                },
+                {
+                  "disabled": false,
+                  "key": "data[]",
+                  "value": "<string>",
+                  "description": "Columns to include in the response (repeat for multiple columns)."
+                },
+                {
+                  "disabled": false,
+                  "key": "start",
+                  "value": "<string>",
+                  "description": "Inclusive start of the date range (format depends on frequency, e.g. YYYY-MM-DD)."
+                },
+                {
+                  "disabled": false,
+                  "key": "end",
+                  "value": "<string>",
+                  "description": "Inclusive end of the date range (format depends on frequency, e.g. YYYY-MM-DD)."
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "<integer>",
+                  "description": "Pagination offset (zero-based row index)."
+                },
+                {
+                  "disabled": false,
+                  "key": "length",
+                  "value": "<integer>",
+                  "description": "Maximum number of rows to return (5,000 max for JSON, 300 max for XML)."
+                },
+                {
+                  "disabled": false,
+                  "key": "out",
+                  "value": "json",
+                  "description": "Output format."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "57b29cd9-1abd-4cce-ad9c-8b788718cb0c",
+              "name": "Time-series response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "petroleum",
+                    "pri",
+                    "gnd",
+                    "data"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "frequency",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "data[]",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "data[]",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "start",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "end",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "length",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "out",
+                      "value": "json"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"response\": {\n    \"total\": 3119,\n    \"dateFormat\": \"string\",\n    \"frequency\": \"string\",\n    \"data\": [\n      {\n        \"key_0\": \"string\"\n      },\n      {\n        \"key_0\": \"string\"\n      }\n    ]\n  },\n  \"request\": {},\n  \"apiVersion\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "0536774a-3440-4904-96ec-92288f6cb5af",
+      "name": "Coal",
+      "description": {
+        "content": "Coal production, shipments, consumption, and trade data.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "c7646145-404f-4540-898b-ae7a436851de",
+          "name": "List coal child routes",
+          "request": {
+            "name": "List coal child routes",
+            "description": {
+              "content": "Returns child routes for coal datasets.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "coal"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3e697b5d-3462-493d-b38e-85422be85c14",
+              "name": "Coal routes metadata.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "coal"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"response\": {\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"description\": \"string\",\n    \"routes\": [\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"description\": \"string\"\n      },\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"description\": \"string\"\n      }\n    ],\n    \"data\": {}\n  },\n  \"request\": {},\n  \"apiVersion\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "550db783-1d56-4dfc-b314-84fe4af89729",
+      "name": "Nuclear",
+      "description": {
+        "content": "Nuclear plant generator outage data.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "00b851bd-af3b-4eaf-9b21-6fc3a9a21a0d",
+          "name": "List nuclear outage child routes",
+          "request": {
+            "name": "List nuclear outage child routes",
+            "description": {
+              "content": "Returns child routes for nuclear plant generator outages.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "nuclear-outages"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f755db22-0bcd-4f39-a460-bc9db92251a7",
+              "name": "Nuclear outages routes metadata.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "nuclear-outages"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"response\": {\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"description\": \"string\",\n    \"routes\": [\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"description\": \"string\"\n      },\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"description\": \"string\"\n      }\n    ],\n    \"data\": {}\n  },\n  \"request\": {},\n  \"apiVersion\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "13b5afe3-dde2-421d-8074-f099758c756c",
+      "name": "Total Energy",
+      "description": {
+        "content": "Comprehensive energy summaries across all sources.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "5f73451d-01ce-41fc-ab85-87b0853bf822",
+          "name": "Query total energy time series",
+          "request": {
+            "name": "Query total energy time series",
+            "description": {
+              "content": "Returns aggregated total energy time-series data across all sources.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "total-energy",
+                "data"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "frequency",
+                  "value": "<string>",
+                  "description": "Periodicity of returned data (annual, monthly, quarterly, daily)."
+                },
+                {
+                  "disabled": false,
+                  "key": "data[]",
+                  "value": "<string>",
+                  "description": "Columns to include in the response (repeat for multiple columns)."
+                },
+                {
+                  "disabled": false,
+                  "key": "data[]",
+                  "value": "<string>",
+                  "description": "Columns to include in the response (repeat for multiple columns)."
+                },
+                {
+                  "disabled": false,
+                  "key": "start",
+                  "value": "<string>",
+                  "description": "Inclusive start of the date range (format depends on frequency, e.g. YYYY-MM-DD)."
+                },
+                {
+                  "disabled": false,
+                  "key": "end",
+                  "value": "<string>",
+                  "description": "Inclusive end of the date range (format depends on frequency, e.g. YYYY-MM-DD)."
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "<integer>",
+                  "description": "Pagination offset (zero-based row index)."
+                },
+                {
+                  "disabled": false,
+                  "key": "length",
+                  "value": "<integer>",
+                  "description": "Maximum number of rows to return (5,000 max for JSON, 300 max for XML)."
+                },
+                {
+                  "disabled": false,
+                  "key": "out",
+                  "value": "json",
+                  "description": "Output format."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4a8bbcee-6de2-4369-b28a-6b57372b9325",
+              "name": "Time-series response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "total-energy",
+                    "data"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "frequency",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "data[]",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "data[]",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "start",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "end",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "length",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "out",
+                      "value": "json"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"response\": {\n    \"total\": 3119,\n    \"dateFormat\": \"string\",\n    \"frequency\": \"string\",\n    \"data\": [\n      {\n        \"key_0\": \"string\"\n      },\n      {\n        \"key_0\": \"string\"\n      }\n    ]\n  },\n  \"request\": {},\n  \"apiVersion\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "80efc896-7be8-4d03-b6dc-0ecc3759783c",
+      "name": "International",
+      "description": {
+        "content": "International energy statistics and projections.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "087a1dc8-373c-4e0e-a043-802200303078",
+          "name": "List international child routes",
+          "request": {
+            "name": "List international child routes",
+            "description": {
+              "content": "Returns child routes for international energy statistics.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "international"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "63f791e1-561b-4ea1-b77d-8d6f395f2a95",
+              "name": "International routes metadata.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "international"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"response\": {\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"description\": \"string\",\n    \"routes\": [\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"description\": \"string\"\n      },\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"description\": \"string\"\n      }\n    ],\n    \"data\": {}\n  },\n  \"request\": {},\n  \"apiVersion\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "5354c634-a8a8-4ff8-a440-cacf944c1362",
+      "name": "SEDS",
+      "description": {
+        "content": "State Energy Data System.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "d2de6542-52da-4947-91df-7dde6dd34f72",
+          "name": "Query State Energy Data System time series",
+          "request": {
+            "name": "Query State Energy Data System time series",
+            "description": {
+              "content": "Returns SEDS time-series data by state and energy series.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "seds",
+                "data"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "frequency",
+                  "value": "<string>",
+                  "description": "Periodicity of returned data (annual, monthly, quarterly, daily)."
+                },
+                {
+                  "disabled": false,
+                  "key": "data[]",
+                  "value": "<string>",
+                  "description": "Columns to include in the response (repeat for multiple columns)."
+                },
+                {
+                  "disabled": false,
+                  "key": "data[]",
+                  "value": "<string>",
+                  "description": "Columns to include in the response (repeat for multiple columns)."
+                },
+                {
+                  "disabled": false,
+                  "key": "start",
+                  "value": "<string>",
+                  "description": "Inclusive start of the date range (format depends on frequency, e.g. YYYY-MM-DD)."
+                },
+                {
+                  "disabled": false,
+                  "key": "end",
+                  "value": "<string>",
+                  "description": "Inclusive end of the date range (format depends on frequency, e.g. YYYY-MM-DD)."
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "<integer>",
+                  "description": "Pagination offset (zero-based row index)."
+                },
+                {
+                  "disabled": false,
+                  "key": "length",
+                  "value": "<integer>",
+                  "description": "Maximum number of rows to return (5,000 max for JSON, 300 max for XML)."
+                },
+                {
+                  "disabled": false,
+                  "key": "out",
+                  "value": "json",
+                  "description": "Output format."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "cadf1f42-fe83-490e-914b-52af0e460683",
+              "name": "Time-series response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "seds",
+                    "data"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "frequency",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "data[]",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "data[]",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "start",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "end",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "length",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "out",
+                      "value": "json"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"response\": {\n    \"total\": 3119,\n    \"dateFormat\": \"string\",\n    \"frequency\": \"string\",\n    \"data\": [\n      {\n        \"key_0\": \"string\"\n      },\n      {\n        \"key_0\": \"string\"\n      }\n    ]\n  },\n  \"request\": {},\n  \"apiVersion\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "9678227d-3cc4-43c4-830a-dca3d53577f4",
+      "name": "CO2 Emissions",
+      "description": {
+        "content": "CO2 emissions aggregates by state and sector.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "9b20522b-ed2a-41ed-b37d-3563817a5785",
+          "name": "Query CO2 emissions aggregates",
+          "request": {
+            "name": "Query CO2 emissions aggregates",
+            "description": {
+              "content": "Returns CO2 emissions aggregate time series by state, sector, and fuel.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "co2-emissions",
+                "co2-emissions-aggregates",
+                "data"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "frequency",
+                  "value": "<string>",
+                  "description": "Periodicity of returned data (annual, monthly, quarterly, daily)."
+                },
+                {
+                  "disabled": false,
+                  "key": "data[]",
+                  "value": "<string>",
+                  "description": "Columns to include in the response (repeat for multiple columns)."
+                },
+                {
+                  "disabled": false,
+                  "key": "data[]",
+                  "value": "<string>",
+                  "description": "Columns to include in the response (repeat for multiple columns)."
+                },
+                {
+                  "disabled": false,
+                  "key": "start",
+                  "value": "<string>",
+                  "description": "Inclusive start of the date range (format depends on frequency, e.g. YYYY-MM-DD)."
+                },
+                {
+                  "disabled": false,
+                  "key": "end",
+                  "value": "<string>",
+                  "description": "Inclusive end of the date range (format depends on frequency, e.g. YYYY-MM-DD)."
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "<integer>",
+                  "description": "Pagination offset (zero-based row index)."
+                },
+                {
+                  "disabled": false,
+                  "key": "length",
+                  "value": "<integer>",
+                  "description": "Maximum number of rows to return (5,000 max for JSON, 300 max for XML)."
+                },
+                {
+                  "disabled": false,
+                  "key": "out",
+                  "value": "json",
+                  "description": "Output format."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3eca70d1-2b52-4a27-bf90-f7a6461c1807",
+              "name": "Time-series response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "co2-emissions",
+                    "co2-emissions-aggregates",
+                    "data"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "frequency",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "data[]",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "data[]",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "start",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "end",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "length",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "out",
+                      "value": "json"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"response\": {\n    \"total\": 3119,\n    \"dateFormat\": \"string\",\n    \"frequency\": \"string\",\n    \"data\": [\n      {\n        \"key_0\": \"string\"\n      },\n      {\n        \"key_0\": \"string\"\n      }\n    ]\n  },\n  \"request\": {},\n  \"apiVersion\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.eia.gov/v2",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api_key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "a0e3c8d1-50d2-4335-8980-16bb2a230c91",
+    "name": "U.S. Energy Information Administration Open Data API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The U.S. Energy Information Administration (EIA) Open Data API v2 provides free programmatic access to EIA's open energy data, including time-series datasets organized by energy category. The API uses a hierarchical route structure where each route corresponds to a category or dataset, and metadata about child routes, available facets, frequencies, and data columns is returned by querying any parent route. An API key, obtained via free registration at https://www.eia.gov/opendata/register.php, is required on every request and must be supplied as a URL query parameter.\n\nContact Support:\n Name: EIA Open Data\n Email: EIA-OpenData@eia.gov",
+      "type": "text/plain"
+    }
+  }
+}
