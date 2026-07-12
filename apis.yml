@@ -44,6 +44,10 @@ apis:
       frequencies, and available data columns. The API supports JSON (default) and XML output, with up to 5,000 rows per
       request for JSON and 300 rows for XML.
 common:
+  - type: DomainSecurity
+    url: security/energy-information-administration-domain-security.yml
+  - type: Authentication
+    url: authentication/energy-information-administration-authentication.yml
   - type: GitHubOrganization
     url: https://github.com/eiagov
   - type: LinkedIn
@@ -60,6 +64,8 @@ common:
     url: https://www.eia.gov/opendata/bulkfiles.php
   - type: Excel Add-in
     url: https://www.eia.gov/opendata/excel/
+  - url: https://www.eia.gov/rss/todayinenergy.xml
+    type: Blog
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com

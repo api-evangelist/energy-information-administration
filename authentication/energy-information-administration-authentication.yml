@@ -1,0 +1,17 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/energy-information-administration-open-data-api-openapi.yml
+summary:
+  types:
+  - apiKey
+  api_key_in:
+  - query
+schemes:
+- name: apiKeyQuery
+  type: apiKey
+  in: query
+  parameter: api_key
+  description: Free API key obtained at https://www.eia.gov/opendata/register.php. Must be supplied
+    on every request as the api_key URL parameter.
+  sources:
+  - openapi/energy-information-administration-open-data-api-openapi.yml
