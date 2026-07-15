@@ -44,6 +44,8 @@ apis:
       frequencies, and available data columns. The API supports JSON (default) and XML output, with up to 5,000 rows per
       request for JSON and 300 rows for XML.
 common:
+  - type: AgenticAccess
+    url: agentic-access/energy-information-administration-agentic-access.yml
   - type: DomainSecurity
     url: security/energy-information-administration-domain-security.yml
   - type: Authentication
