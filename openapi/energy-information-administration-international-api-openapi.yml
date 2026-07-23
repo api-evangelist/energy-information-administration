@@ -1,0 +1,81 @@
+openapi: 3.1.0
+info:
+  title: U.S. Energy Information Administration Open Data CO2 Emissions International API
+  description: The U.S. Energy Information Administration (EIA) Open Data API v2 provides free programmatic access to EIA's open energy data, including time-series datasets organized by energy category. The API uses a hierarchical route structure where each route corresponds to a category or dataset, and metadata about child routes, available facets, frequencies, and data columns is returned by querying any parent route. An API key, obtained via free registration at https://www.eia.gov/opendata/register.php, is required on every request and must be supplied as a URL query parameter.
+  version: '2.1'
+  contact:
+    name: EIA Open Data
+    url: https://www.eia.gov/opendata/
+    email: EIA-OpenData@eia.gov
+  license:
+    name: EIA Copyrights and Reuse Policy
+    url: https://www.eia.gov/about/copyrights_reuse.php
+servers:
+- url: https://api.eia.gov/v2
+  description: EIA Open Data API v2 production server
+security:
+- apiKeyQuery: []
+tags:
+- name: International
+  description: International energy statistics and projections.
+paths:
+  /international:
+    get:
+      operationId: getInternationalRoutes
+      summary: List international child routes
+      description: Returns child routes for international energy statistics.
+      tags:
+      - International
+      responses:
+        '200':
+          description: International routes metadata.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RouteMetadata'
+components:
+  schemas:
+    RouteMetadata:
+      type: object
+      description: Metadata about a route, including its child routes, facets, and frequencies.
+      properties:
+        response:
+          type: object
+          properties:
+            id:
+              type: string
+            name:
+              type: string
+            description:
+              type: string
+            routes:
+              type: array
+              items:
+                type: object
+                properties:
+                  id:
+                    type: string
+                  name:
+                    type: string
+                  description:
+                    type: string
+            frequency:
+              type: array
+              items:
+                type: object
+            facets:
+              type: array
+              items:
+                type: object
+            data:
+              type: object
+        request:
+          type: object
+        apiVersion:
+          type: string
+  securitySchemes:
+    apiKeyQuery:
+      type: apiKey
+      in: query
+      name: api_key
+      description: Free API key obtained at https://www.eia.gov/opendata/register.php. Must be supplied on every request as the api_key URL parameter.
