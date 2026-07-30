@@ -6,7 +6,20 @@ tags:
   - Federal Government
   - Open Data
 kind: contract
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/energy-information-administration.png
 access: 3rd-Party
 created: '2024-12-03'
 modified: '2026-05-19'
@@ -18,31 +31,166 @@ description: >-
   coal, nuclear, renewables, total energy, international energy statistics, the State Energy Data System (SEDS), and CO2
   emissions aggregates.
 apis:
-  - aid: energy-information-administration:open-data-api
-    name: EIA Open Data API
-    tags:
-      - Energy
-      - Federal Government
-      - Open Data
-      - Time Series
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    baseURL: https://api.eia.gov/v2
-    humanURL: https://www.eia.gov/opendata/
-    properties:
-      - url: https://www.eia.gov/opendata/
-        type: Documentation
-      - url: https://www.eia.gov/opendata/browser/
-        type: API Browser
-      - url: https://www.eia.gov/opendata/register.php
-        type: Signup
-      - url: openapi/energy-information-administration-open-data-api-openapi.yml
-        type: OpenAPI
-    description: >-
-      The EIA Open Data API v2 provides programmatic access to free U.S. energy time-series data through a hierarchical
-      route structure organized by energy category. An API key is required (free registration) and is passed as a URL
-      query parameter on every request. Responses include rich metadata for navigating child routes, facets,
-      frequencies, and available data columns. The API supports JSON (default) and XML output, with up to 5,000 rows per
-      request for JSON and 300 rows for XML.
+- aid: energy-information-administration:energy-information-administration-co2-emissions-api
+  name: Energy Information Administration CO2 Emissions API
+  description: CO2 emissions aggregates by state and sector.
+  humanURL: https://www.eia.gov/opendata/
+  baseURL: https://api.eia.gov/v2
+  tags:
+  - CO2 Emissions
+  properties:
+  - type: OpenAPI
+    url: openapi/energy-information-administration-co2-emissions-api-openapi.yml
+  - type: Documentation
+    url: https://www.eia.gov/opendata/
+  - type: API Browser
+    url: https://www.eia.gov/opendata/browser/
+  - type: Signup
+    url: https://www.eia.gov/opendata/register.php
+- aid: energy-information-administration:energy-information-administration-coal-api
+  name: Energy Information Administration Coal API
+  description: Coal production, shipments, consumption, and trade data.
+  humanURL: https://www.eia.gov/opendata/
+  baseURL: https://api.eia.gov/v2
+  tags:
+  - Coal
+  properties:
+  - type: OpenAPI
+    url: openapi/energy-information-administration-coal-api-openapi.yml
+  - type: Documentation
+    url: https://www.eia.gov/opendata/
+  - type: API Browser
+    url: https://www.eia.gov/opendata/browser/
+  - type: Signup
+    url: https://www.eia.gov/opendata/register.php
+- aid: energy-information-administration:energy-information-administration-discovery-api
+  name: Energy Information Administration Discovery API
+  description: Browse the API tree to discover available routes, facets, and metadata.
+  humanURL: https://www.eia.gov/opendata/
+  baseURL: https://api.eia.gov/v2
+  tags:
+  - Discovery
+  properties:
+  - type: OpenAPI
+    url: openapi/energy-information-administration-discovery-api-openapi.yml
+  - type: Documentation
+    url: https://www.eia.gov/opendata/
+  - type: API Browser
+    url: https://www.eia.gov/opendata/browser/
+  - type: Signup
+    url: https://www.eia.gov/opendata/register.php
+- aid: energy-information-administration:energy-information-administration-electricity-api
+  name: Energy Information Administration Electricity API
+  description: Electricity generation, retail sales, and balancing authority data.
+  humanURL: https://www.eia.gov/opendata/
+  baseURL: https://api.eia.gov/v2
+  tags:
+  - Electricity
+  properties:
+  - type: OpenAPI
+    url: openapi/energy-information-administration-electricity-api-openapi.yml
+  - type: Documentation
+    url: https://www.eia.gov/opendata/
+  - type: API Browser
+    url: https://www.eia.gov/opendata/browser/
+  - type: Signup
+    url: https://www.eia.gov/opendata/register.php
+- aid: energy-information-administration:energy-information-administration-international-api
+  name: Energy Information Administration International API
+  description: International energy statistics and projections.
+  humanURL: https://www.eia.gov/opendata/
+  baseURL: https://api.eia.gov/v2
+  tags:
+  - International
+  properties:
+  - type: OpenAPI
+    url: openapi/energy-information-administration-international-api-openapi.yml
+  - type: Documentation
+    url: https://www.eia.gov/opendata/
+  - type: API Browser
+    url: https://www.eia.gov/opendata/browser/
+  - type: Signup
+    url: https://www.eia.gov/opendata/register.php
+- aid: energy-information-administration:energy-information-administration-natural-gas-api
+  name: Energy Information Administration Natural Gas API
+  description: Natural gas production, prices, storage, and trade data.
+  humanURL: https://www.eia.gov/opendata/
+  baseURL: https://api.eia.gov/v2
+  tags:
+  - Natural Gas
+  properties:
+  - type: OpenAPI
+    url: openapi/energy-information-administration-natural-gas-api-openapi.yml
+  - type: Documentation
+    url: https://www.eia.gov/opendata/
+  - type: API Browser
+    url: https://www.eia.gov/opendata/browser/
+  - type: Signup
+    url: https://www.eia.gov/opendata/register.php
+- aid: energy-information-administration:energy-information-administration-nuclear-api
+  name: Energy Information Administration Nuclear API
+  description: Nuclear plant generator outage data.
+  humanURL: https://www.eia.gov/opendata/
+  baseURL: https://api.eia.gov/v2
+  tags:
+  - Nuclear
+  properties:
+  - type: OpenAPI
+    url: openapi/energy-information-administration-nuclear-api-openapi.yml
+  - type: Documentation
+    url: https://www.eia.gov/opendata/
+  - type: API Browser
+    url: https://www.eia.gov/opendata/browser/
+  - type: Signup
+    url: https://www.eia.gov/opendata/register.php
+- aid: energy-information-administration:energy-information-administration-petroleum-api
+  name: Energy Information Administration Petroleum API
+  description: Crude oil reserves, refining, consumption, and stocks data.
+  humanURL: https://www.eia.gov/opendata/
+  baseURL: https://api.eia.gov/v2
+  tags:
+  - Petroleum
+  properties:
+  - type: OpenAPI
+    url: openapi/energy-information-administration-petroleum-api-openapi.yml
+  - type: Documentation
+    url: https://www.eia.gov/opendata/
+  - type: API Browser
+    url: https://www.eia.gov/opendata/browser/
+  - type: Signup
+    url: https://www.eia.gov/opendata/register.php
+- aid: energy-information-administration:energy-information-administration-seds-api
+  name: Energy Information Administration SEDS API
+  description: State Energy Data System.
+  humanURL: https://www.eia.gov/opendata/
+  baseURL: https://api.eia.gov/v2
+  tags:
+  - SEDS
+  properties:
+  - type: OpenAPI
+    url: openapi/energy-information-administration-seds-api-openapi.yml
+  - type: Documentation
+    url: https://www.eia.gov/opendata/
+  - type: API Browser
+    url: https://www.eia.gov/opendata/browser/
+  - type: Signup
+    url: https://www.eia.gov/opendata/register.php
+- aid: energy-information-administration:energy-information-administration-total-energy-api
+  name: Energy Information Administration Total Energy API
+  description: Comprehensive energy summaries across all sources.
+  humanURL: https://www.eia.gov/opendata/
+  baseURL: https://api.eia.gov/v2
+  tags:
+  - Total Energy
+  properties:
+  - type: OpenAPI
+    url: openapi/energy-information-administration-total-energy-api-openapi.yml
+  - type: Documentation
+    url: https://www.eia.gov/opendata/
+  - type: API Browser
+    url: https://www.eia.gov/opendata/browser/
+  - type: Signup
+    url: https://www.eia.gov/opendata/register.php
 common:
   - type: AgenticAccess
     url: agentic-access/energy-information-administration-agentic-access.yml
