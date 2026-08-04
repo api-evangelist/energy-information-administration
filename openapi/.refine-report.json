@@ -1,0 +1,32 @@
+{
+  "provider": "energy-information-administration",
+  "sources": [
+    "energy-information-administration-co2-emissions-api-openapi.yml",
+    "energy-information-administration-coal-api-openapi.yml",
+    "energy-information-administration-discovery-api-openapi.yml",
+    "energy-information-administration-electricity-api-openapi.yml",
+    "energy-information-administration-international-api-openapi.yml",
+    "energy-information-administration-natural-gas-api-openapi.yml",
+    "energy-information-administration-nuclear-api-openapi.yml",
+    "energy-information-administration-petroleum-api-openapi.yml",
+    "energy-information-administration-seds-api-openapi.yml",
+    "energy-information-administration-total-energy-api-openapi.yml"
+  ],
+  "outputs": [
+    "energy-information-administration-co2-emissions-api-openapi.yml",
+    "energy-information-administration-coal-api-openapi.yml",
+    "energy-information-administration-discovery-api-openapi.yml",
+    "energy-information-administration-electricity-api-openapi.yml",
+    "energy-information-administration-international-api-openapi.yml",
+    "energy-information-administration-natural-gas-api-openapi.yml",
+    "energy-information-administration-nuclear-api-openapi.yml",
+    "energy-information-administration-petroleum-api-openapi.yml",
+    "energy-information-administration-seds-api-openapi.yml",
+    "energy-information-administration-total-energy-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
