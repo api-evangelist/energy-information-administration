@@ -1,0 +1,124 @@
+{
+  "item": [
+    {
+      "id": "635eb27d-d4bd-464d-845b-681c37aea557",
+      "name": "Coal",
+      "description": {
+        "content": "Coal production, shipments, consumption, and trade data.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "79a89995-7bcd-4d6b-8eb7-39e4d74e1cd1",
+          "name": "List coal child routes",
+          "request": {
+            "name": "List coal child routes",
+            "description": {
+              "content": "Returns child routes for coal datasets.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "coal"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "206f17d2-dba3-47b2-8cd9-de6a581c99da",
+              "name": "Coal routes metadata.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "coal"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"response\": {\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"description\": \"string\",\n    \"routes\": [\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"description\": \"string\"\n      },\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"description\": \"string\"\n      }\n    ],\n    \"data\": {}\n  },\n  \"request\": {},\n  \"apiVersion\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.eia.gov/v2",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api_key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "875e54a0-a36c-4cb9-b93c-94b27e2616ed",
+    "name": "U.S. Energy Information Administration Open Data CO2 Emissions Coal API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The U.S. Energy Information Administration (EIA) Open Data API v2 provides free programmatic access to EIA's open energy data, including time-series datasets organized by energy category. The API uses a hierarchical route structure where each route corresponds to a category or dataset, and metadata about child routes, available facets, frequencies, and data columns is returned by querying any parent route. An API key, obtained via free registration at https://www.eia.gov/opendata/register.php, is required on every request and must be supplied as a URL query parameter.\n\nContact Support:\n Name: EIA Open Data\n Email: EIA-OpenData@eia.gov",
+      "type": "text/plain"
+    }
+  }
+}

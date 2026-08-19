@@ -1,0 +1,92 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "U.S. Energy Information Administration Open Data CO2 Emissions Natural Gas API",
+    "version": "2.1"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "api_key",
+      "value": "{{api_key}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Natural Gas",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List natural gas child routes",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.eia.gov/v2/natural-gas"
+          },
+          "docs": "Returns child routes for natural gas datasets."
+        },
+        {
+          "info": {
+            "name": "Query natural gas price summary",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.eia.gov/v2/natural-gas/pri/sum/data",
+            "params": [
+              {
+                "name": "frequency",
+                "value": "",
+                "type": "query",
+                "description": "Periodicity of returned data (annual, monthly, quarterly, daily)."
+              },
+              {
+                "name": "data[]",
+                "value": "",
+                "type": "query",
+                "description": "Columns to include in the response (repeat for multiple columns)."
+              },
+              {
+                "name": "start",
+                "value": "",
+                "type": "query",
+                "description": "Inclusive start of the date range (format depends on frequency, e.g. YYYY-MM-DD)."
+              },
+              {
+                "name": "end",
+                "value": "",
+                "type": "query",
+                "description": "Inclusive end of the date range (format depends on frequency, e.g. YYYY-MM-DD)."
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "Pagination offset (zero-based row index)."
+              },
+              {
+                "name": "length",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of rows to return (5,000 max for JSON, 300 max for XML)."
+              },
+              {
+                "name": "out",
+                "value": "",
+                "type": "query",
+                "description": "Output format."
+              }
+            ]
+          },
+          "docs": "Returns natural gas price summary time series."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,207 @@
+{
+  "item": [
+    {
+      "id": "28c6a000-243d-49fc-af29-e66efb92fa37",
+      "name": "Total Energy",
+      "description": {
+        "content": "Comprehensive energy summaries across all sources.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "07490f12-152d-4506-9a4e-b249b2434745",
+          "name": "Query total energy time series",
+          "request": {
+            "name": "Query total energy time series",
+            "description": {
+              "content": "Returns aggregated total energy time-series data across all sources.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "total-energy",
+                "data"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "frequency",
+                  "value": "<string>",
+                  "description": "Periodicity of returned data (annual, monthly, quarterly, daily)."
+                },
+                {
+                  "disabled": false,
+                  "key": "data[]",
+                  "value": "<string>",
+                  "description": "Columns to include in the response (repeat for multiple columns)."
+                },
+                {
+                  "disabled": false,
+                  "key": "data[]",
+                  "value": "<string>",
+                  "description": "Columns to include in the response (repeat for multiple columns)."
+                },
+                {
+                  "disabled": false,
+                  "key": "start",
+                  "value": "<string>",
+                  "description": "Inclusive start of the date range (format depends on frequency, e.g. YYYY-MM-DD)."
+                },
+                {
+                  "disabled": false,
+                  "key": "end",
+                  "value": "<string>",
+                  "description": "Inclusive end of the date range (format depends on frequency, e.g. YYYY-MM-DD)."
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "<integer>",
+                  "description": "Pagination offset (zero-based row index)."
+                },
+                {
+                  "disabled": false,
+                  "key": "length",
+                  "value": "<integer>",
+                  "description": "Maximum number of rows to return (5,000 max for JSON, 300 max for XML)."
+                },
+                {
+                  "disabled": false,
+                  "key": "out",
+                  "value": "json",
+                  "description": "Output format."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3e861f21-92fe-4793-9402-22954eba2ab1",
+              "name": "Time-series response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "total-energy",
+                    "data"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "frequency",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "data[]",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "data[]",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "start",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "end",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "length",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "out",
+                      "value": "json"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"response\": {\n    \"total\": 9904,\n    \"dateFormat\": \"string\",\n    \"frequency\": \"string\",\n    \"data\": [\n      {\n        \"key_0\": false\n      },\n      {\n        \"key_0\": 1462,\n        \"key_1\": 5734\n      }\n    ]\n  },\n  \"request\": {},\n  \"apiVersion\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.eia.gov/v2",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api_key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "ca58f8e1-cbef-434e-bda1-af76f1ed0c82",
+    "name": "U.S. Energy Information Administration Open Data CO2 Emissions Total Energy API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The U.S. Energy Information Administration (EIA) Open Data API v2 provides free programmatic access to EIA's open energy data, including time-series datasets organized by energy category. The API uses a hierarchical route structure where each route corresponds to a category or dataset, and metadata about child routes, available facets, frequencies, and data columns is returned by querying any parent route. An API key, obtained via free registration at https://www.eia.gov/opendata/register.php, is required on every request and must be supplied as a URL query parameter.\n\nContact Support:\n Name: EIA Open Data\n Email: EIA-OpenData@eia.gov",
+      "type": "text/plain"
+    }
+  }
+}

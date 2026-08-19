@@ -1,0 +1,103 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "U.S. Energy Information Administration Open Data CO2 Emissions Discovery API",
+    "version": "2.1"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "api_key",
+      "value": "{{api_key}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Discovery",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List top-level data categories",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.eia.gov/v2/"
+          },
+          "docs": "Returns metadata for the top-level routes available in the API, including descriptions and child route identifiers."
+        },
+        {
+          "info": {
+            "name": "List electricity child routes",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.eia.gov/v2/electricity"
+          },
+          "docs": "Returns the available child routes under the electricity category, such as retail sales, generation, and balancing authority data."
+        },
+        {
+          "info": {
+            "name": "List natural gas child routes",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.eia.gov/v2/natural-gas"
+          },
+          "docs": "Returns child routes for natural gas datasets."
+        },
+        {
+          "info": {
+            "name": "List petroleum child routes",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.eia.gov/v2/petroleum"
+          },
+          "docs": "Returns child routes for petroleum datasets."
+        },
+        {
+          "info": {
+            "name": "List coal child routes",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.eia.gov/v2/coal"
+          },
+          "docs": "Returns child routes for coal datasets."
+        },
+        {
+          "info": {
+            "name": "List nuclear outage child routes",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.eia.gov/v2/nuclear-outages"
+          },
+          "docs": "Returns child routes for nuclear plant generator outages."
+        },
+        {
+          "info": {
+            "name": "List international child routes",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.eia.gov/v2/international"
+          },
+          "docs": "Returns child routes for international energy statistics."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

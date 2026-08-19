@@ -1,0 +1,124 @@
+{
+  "item": [
+    {
+      "id": "271ec8ec-7d8f-4a4a-9ed7-9e55bbc1136a",
+      "name": "Nuclear",
+      "description": {
+        "content": "Nuclear plant generator outage data.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "07ce40db-7c7e-444b-a02b-68c4666cc2fd",
+          "name": "List nuclear outage child routes",
+          "request": {
+            "name": "List nuclear outage child routes",
+            "description": {
+              "content": "Returns child routes for nuclear plant generator outages.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "nuclear-outages"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3bc09026-f6c3-407d-9fe1-1311e9f68885",
+              "name": "Nuclear outages routes metadata.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "nuclear-outages"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"response\": {\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"description\": \"string\",\n    \"routes\": [\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"description\": \"string\"\n      },\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"description\": \"string\"\n      }\n    ],\n    \"data\": {}\n  },\n  \"request\": {},\n  \"apiVersion\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.eia.gov/v2",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api_key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "fb8c2d19-3fd4-4bde-99da-708e29bec775",
+    "name": "U.S. Energy Information Administration Open Data CO2 Emissions Nuclear API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The U.S. Energy Information Administration (EIA) Open Data API v2 provides free programmatic access to EIA's open energy data, including time-series datasets organized by energy category. The API uses a hierarchical route structure where each route corresponds to a category or dataset, and metadata about child routes, available facets, frequencies, and data columns is returned by querying any parent route. An API key, obtained via free registration at https://www.eia.gov/opendata/register.php, is required on every request and must be supplied as a URL query parameter.\n\nContact Support:\n Name: EIA Open Data\n Email: EIA-OpenData@eia.gov",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "U.S. Energy Information Administration Open Data CO2 Emissions Total Energy API",
+    "version": "2.1"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "api_key",
+      "value": "{{api_key}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Total Energy",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Query total energy time series",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.eia.gov/v2/total-energy/data",
+            "params": [
+              {
+                "name": "frequency",
+                "value": "",
+                "type": "query",
+                "description": "Periodicity of returned data (annual, monthly, quarterly, daily)."
+              },
+              {
+                "name": "data[]",
+                "value": "",
+                "type": "query",
+                "description": "Columns to include in the response (repeat for multiple columns)."
+              },
+              {
+                "name": "start",
+                "value": "",
+                "type": "query",
+                "description": "Inclusive start of the date range (format depends on frequency, e.g. YYYY-MM-DD)."
+              },
+              {
+                "name": "end",
+                "value": "",
+                "type": "query",
+                "description": "Inclusive end of the date range (format depends on frequency, e.g. YYYY-MM-DD)."
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "Pagination offset (zero-based row index)."
+              },
+              {
+                "name": "length",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of rows to return (5,000 max for JSON, 300 max for XML)."
+              },
+              {
+                "name": "out",
+                "value": "",
+                "type": "query",
+                "description": "Output format."
+              }
+            ]
+          },
+          "docs": "Returns aggregated total energy time-series data across all sources."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

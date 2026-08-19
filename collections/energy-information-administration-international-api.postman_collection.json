@@ -1,0 +1,124 @@
+{
+  "item": [
+    {
+      "id": "4aafc0fb-ba17-47ee-ad04-d5a2ee26fe68",
+      "name": "International",
+      "description": {
+        "content": "International energy statistics and projections.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "35d893d9-ade4-4741-8370-7f60e2de704e",
+          "name": "List international child routes",
+          "request": {
+            "name": "List international child routes",
+            "description": {
+              "content": "Returns child routes for international energy statistics.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "international"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8f864ee4-c0dd-4c54-ba3e-a355e624b05d",
+              "name": "International routes metadata.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "international"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"response\": {\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"description\": \"string\",\n    \"routes\": [\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"description\": \"string\"\n      },\n      {\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"description\": \"string\"\n      }\n    ],\n    \"data\": {}\n  },\n  \"request\": {},\n  \"apiVersion\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.eia.gov/v2",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api_key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "8b1b4a63-ff67-4f0f-81e3-82727e470ab9",
+    "name": "U.S. Energy Information Administration Open Data CO2 Emissions International API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The U.S. Energy Information Administration (EIA) Open Data API v2 provides free programmatic access to EIA's open energy data, including time-series datasets organized by energy category. The API uses a hierarchical route structure where each route corresponds to a category or dataset, and metadata about child routes, available facets, frequencies, and data columns is returned by querying any parent route. An API key, obtained via free registration at https://www.eia.gov/opendata/register.php, is required on every request and must be supplied as a URL query parameter.\n\nContact Support:\n Name: EIA Open Data\n Email: EIA-OpenData@eia.gov",
+      "type": "text/plain"
+    }
+  }
+}

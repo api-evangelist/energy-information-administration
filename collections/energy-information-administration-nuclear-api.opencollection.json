@@ -1,0 +1,37 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "U.S. Energy Information Administration Open Data CO2 Emissions Nuclear API",
+    "version": "2.1"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "api_key",
+      "value": "{{api_key}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Nuclear",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List nuclear outage child routes",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.eia.gov/v2/nuclear-outages"
+          },
+          "docs": "Returns child routes for nuclear plant generator outages."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
