@@ -3,6 +3,10 @@ name: Energy Information Administration
 url: https://raw.githubusercontent.com/api-evangelist/energy-information-administration/refs/heads/main/apis.yml
 tags:
   - Energy
+  - Federal-Government
+  - Open Data
+tags_raw:
+  - Energy
   - Federal Government
   - Open Data
 kind: contract
