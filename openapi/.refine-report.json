@@ -1,16 +1,7 @@
 {
   "provider": "energy-information-administration",
   "sources": [
-    "energy-information-administration-co2-emissions-api-openapi.yml",
-    "energy-information-administration-coal-api-openapi.yml",
-    "energy-information-administration-discovery-api-openapi.yml",
-    "energy-information-administration-electricity-api-openapi.yml",
-    "energy-information-administration-international-api-openapi.yml",
-    "energy-information-administration-natural-gas-api-openapi.yml",
-    "energy-information-administration-nuclear-api-openapi.yml",
-    "energy-information-administration-petroleum-api-openapi.yml",
-    "energy-information-administration-seds-api-openapi.yml",
-    "energy-information-administration-total-energy-api-openapi.yml"
+    "_original/energy-information-administration-open-data-api-openapi.yml"
   ],
   "outputs": [
     "energy-information-administration-co2-emissions-api-openapi.yml",
@@ -27,6 +18,21 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "energy-information-administration-open-data-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "energy-information-administration-co2-emissions-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "energy-information-administration-coal-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "energy-information-administration-discovery-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "energy-information-administration-electricity-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "energy-information-administration-international-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "energy-information-administration-natural-gas-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "energy-information-administration-nuclear-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "energy-information-administration-petroleum-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "energy-information-administration-seds-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "energy-information-administration-total-energy-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

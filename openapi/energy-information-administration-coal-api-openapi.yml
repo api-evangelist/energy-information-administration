@@ -1,7 +1,7 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: U.S. Energy Information Administration Open Data CO2 Emissions Coal API
-  description: The U.S. Energy Information Administration (EIA) Open Data API v2 provides free programmatic access to EIA's open energy data, including time-series datasets organized by energy category. The API uses a hierarchical route structure where each route corresponds to a category or dataset, and metadata about child routes, available facets, frequencies, and data columns is returned by querying any parent route. An API key, obtained via free registration at https://www.eia.gov/opendata/register.php, is required on every request and must be supplied as a URL query parameter.
+  title: U.S. Energy Information Administration Open Data Coal API
+  description: The U.S.
   version: '2.1'
   contact:
     name: EIA Open Data
@@ -16,7 +16,7 @@ servers:
 security:
 - apiKeyQuery: []
 tags:
-- name: Coal
+- name: COAL
   description: Coal production, shipments, consumption, and trade data.
 paths:
   /coal:
@@ -25,7 +25,7 @@ paths:
       summary: List coal child routes
       description: Returns child routes for coal datasets.
       tags:
-      - Coal
+      - COAL
       responses:
         '200':
           description: Coal routes metadata.
