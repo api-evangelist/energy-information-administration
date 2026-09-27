@@ -56,7 +56,97 @@ paths:
               schema:
                 $ref: '#/components/schemas/SeriesResponse'
 components:
+  parameters:
+    Length:
+      name: length
+      in: query
+      description: Maximum number of rows to return (5,000 max for JSON, 300 max for XML).
+      required: false
+      schema:
+        type: integer
+        maximum: 5000
+    Out:
+      name: out
+      in: query
+      description: Output format.
+      required: false
+      schema:
+        type: string
+        enum:
+        - json
+        - xml
+        default: json
+    DataArray:
+      name: data[]
+      in: query
+      description: Columns to include in the response (repeat for multiple columns).
+      required: false
+      schema:
+        type: array
+        items:
+          type: string
+      style: form
+      explode: true
+    Frequency:
+      name: frequency
+      in: query
+      description: Periodicity of returned data (annual, monthly, quarterly, daily).
+      required: false
+      schema:
+        type: string
+        enum:
+        - annual
+        - quarterly
+        - monthly
+        - weekly
+        - daily
+        - hourly
+    Start:
+      name: start
+      in: query
+      description: Inclusive start of the date range (format depends on frequency, e.g. YYYY-MM-DD).
+      required: false
+      schema:
+        type: string
+    Offset:
+      name: offset
+      in: query
+      description: Pagination offset (zero-based row index).
+      required: false
+      schema:
+        type: integer
+        minimum: 0
+    End:
+      name: end
+      in: query
+      description: Inclusive end of the date range (format depends on frequency, e.g. YYYY-MM-DD).
+      required: false
+      schema:
+        type: string
   schemas:
+    SeriesResponse:
+      type: object
+      description: Time-series data response.
+      properties:
+        response:
+          type: object
+          properties:
+            total:
+              type: integer
+              description: Total rows available for the query.
+            dateFormat:
+              type: string
+            frequency:
+              type: string
+            data:
+              type: array
+              items:
+                type: object
+                additionalProperties: true
+        request:
+          type: object
+        apiVersion:
+          type: string
     RouteMetadata:
       type: object
       description: Metadata about a route, including its child routes, facets, and frequencies.
@@ -95,96 +185,6 @@ components:
           type: object
         apiVersion:
           type: string
-    SeriesResponse:
-      type: object
-      description: Time-series data response.
-      properties:
-        response:
-          type: object
-          properties:
-            total:
-              type: integer
-              description: Total rows available for the query.
-            dateFormat:
-              type: string
-            frequency:
-              type: string
-            data:
-              type: array
-              items:
-                type: object
-                additionalProperties: true
-        request:
-          type: object
-        apiVersion:
-          type: string
-  parameters:
-    Offset:
-      name: offset
-      in: query
-      description: Pagination offset (zero-based row index).
-      required: false
-      schema:
-        type: integer
-        minimum: 0
-    Frequency:
-      name: frequency
-      in: query
-      description: Periodicity of returned data (annual, monthly, quarterly, daily).
-      required: false
-      schema:
-        type: string
-        enum:
-        - annual
-        - quarterly
-        - monthly
-        - weekly
-        - daily
-        - hourly
-    Length:
-      name: length
-      in: query
-      description: Maximum number of rows to return (5,000 max for JSON, 300 max for XML).
-      required: false
-      schema:
-        type: integer
-        maximum: 5000
-    End:
-      name: end
-      in: query
-      description: Inclusive end of the date range (format depends on frequency, e.g. YYYY-MM-DD).
-      required: false
-      schema:
-        type: string
-    Out:
-      name: out
-      in: query
-      description: Output format.
-      required: false
-      schema:
-        type: string
-        enum:
-        - json
-        - xml
-        default: json
-    Start:
-      name: start
-      in: query
-      description: Inclusive start of the date range (format depends on frequency, e.g. YYYY-MM-DD).
-      required: false
-      schema:
-        type: string
-    DataArray:
-      name: data[]
-      in: query
-      description: Columns to include in the response (repeat for multiple columns).
-      required: false
-      schema:
-        type: array
-        items:
-          type: string
-      style: form
-      explode: true
   securitySchemes:
     apiKeyQuery:
       type: apiKey
