@@ -57,25 +57,6 @@ paths:
                 $ref: '#/components/schemas/SeriesResponse'
 components:
   parameters:
-    Length:
-      name: length
-      in: query
-      description: Maximum number of rows to return (5,000 max for JSON, 300 max for XML).
-      required: false
-      schema:
-        type: integer
-        maximum: 5000
-    Out:
-      name: out
-      in: query
-      description: Output format.
-      required: false
-      schema:
-        type: string
-        enum:
-        - json
-        - xml
-        default: json
     DataArray:
       name: data[]
       in: query
@@ -87,6 +68,24 @@ components:
           type: string
       style: form
       explode: true
+    Out:
+      name: out
+      in: query
+      description: Output format.
+      required: false
+      schema:
+        type: string
+        enum:
+        - json
+        - xml
+        default: json
+    End:
+      name: end
+      in: query
+      description: Inclusive end of the date range (format depends on frequency, e.g. YYYY-MM-DD).
+      required: false
+      schema:
+        type: string
     Frequency:
       name: frequency
       in: query
@@ -101,6 +100,14 @@ components:
         - weekly
         - daily
         - hourly
+    Length:
+      name: length
+      in: query
+      description: Maximum number of rows to return (5,000 max for JSON, 300 max for XML).
+      required: false
+      schema:
+        type: integer
+        maximum: 5000
     Start:
       name: start
       in: query
@@ -116,37 +123,7 @@ components:
       schema:
         type: integer
         minimum: 0
-    End:
-      name: end
-      in: query
-      description: Inclusive end of the date range (format depends on frequency, e.g. YYYY-MM-DD).
-      required: false
-      schema:
-        type: string
   schemas:
-    SeriesResponse:
-      type: object
-      description: Time-series data response.
-      properties:
-        response:
-          type: object
-          properties:
-            total:
-              type: integer
-              description: Total rows available for the query.
-            dateFormat:
-              type: string
-            frequency:
-              type: string
-            data:
-              type: array
-              items:
-                type: object
-                additionalProperties: true
-        request:
-          type: object
-        apiVersion:
-          type: string
     RouteMetadata:
       type: object
       description: Metadata about a route, including its child routes, facets, and frequencies.
@@ -181,6 +158,29 @@ components:
                 type: object
             data:
               type: object
+        request:
+          type: object
+        apiVersion:
+          type: string
+    SeriesResponse:
+      type: object
+      description: Time-series data response.
+      properties:
+        response:
+          type: object
+          properties:
+            total:
+              type: integer
+              description: Total rows available for the query.
+            dateFormat:
+              type: string
+            frequency:
+              type: string
+            data:
+              type: array
+              items:
+                type: object
+                additionalProperties: true
         request:
           type: object
         apiVersion:
