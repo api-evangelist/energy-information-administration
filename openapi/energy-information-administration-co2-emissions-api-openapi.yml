@@ -43,6 +43,50 @@ paths:
                 $ref: '#/components/schemas/SeriesResponse'
 components:
   parameters:
+    Length:
+      name: length
+      in: query
+      description: Maximum number of rows to return (5,000 max for JSON, 300 max for XML).
+      required: false
+      schema:
+        type: integer
+        maximum: 5000
+    Offset:
+      name: offset
+      in: query
+      description: Pagination offset (zero-based row index).
+      required: false
+      schema:
+        type: integer
+        minimum: 0
+    End:
+      name: end
+      in: query
+      description: Inclusive end of the date range (format depends on frequency, e.g. YYYY-MM-DD).
+      required: false
+      schema:
+        type: string
+    Frequency:
+      name: frequency
+      in: query
+      description: Periodicity of returned data (annual, monthly, quarterly, daily).
+      required: false
+      schema:
+        type: string
+        enum:
+        - annual
+        - quarterly
+        - monthly
+        - weekly
+        - daily
+        - hourly
+    Start:
+      name: start
+      in: query
+      description: Inclusive start of the date range (format depends on frequency, e.g. YYYY-MM-DD).
+      required: false
+      schema:
+        type: string
     DataArray:
       name: data[]
       in: query
@@ -65,50 +109,6 @@ components:
         - json
         - xml
         default: json
-    End:
-      name: end
-      in: query
-      description: Inclusive end of the date range (format depends on frequency, e.g. YYYY-MM-DD).
-      required: false
-      schema:
-        type: string
-    Frequency:
-      name: frequency
-      in: query
-      description: Periodicity of returned data (annual, monthly, quarterly, daily).
-      required: false
-      schema:
-        type: string
-        enum:
-        - annual
-        - quarterly
-        - monthly
-        - weekly
-        - daily
-        - hourly
-    Length:
-      name: length
-      in: query
-      description: Maximum number of rows to return (5,000 max for JSON, 300 max for XML).
-      required: false
-      schema:
-        type: integer
-        maximum: 5000
-    Start:
-      name: start
-      in: query
-      description: Inclusive start of the date range (format depends on frequency, e.g. YYYY-MM-DD).
-      required: false
-      schema:
-        type: string
-    Offset:
-      name: offset
-      in: query
-      description: Pagination offset (zero-based row index).
-      required: false
-      schema:
-        type: integer
-        minimum: 0
   schemas:
     SeriesResponse:
       type: object
