@@ -210,6 +210,12 @@ apis:
   - type: Signup
     url: https://www.eia.gov/opendata/register.php
 common:
+  - type: Plans
+    url: plans/energy-information-administration-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/energy-information-administration-rate-limits.yml
+  - type: FinOps
+    url: finops/energy-information-administration-finops.yml
   - type: AgenticAccess
     url: agentic-access/energy-information-administration-agentic-access.yml
   - type: DomainSecurity
