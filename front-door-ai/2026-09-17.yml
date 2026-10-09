@@ -11,9 +11,13 @@ front_door_ai:
   owner: eia
   shares_host_with:
   - eia
+  - thermal-power
   inherited_from: null
+  alias_of: null
   verdict: silent
   score: null
+  band: null
+  band_label: null
   host_score: 0
   density: null
   words: 722
