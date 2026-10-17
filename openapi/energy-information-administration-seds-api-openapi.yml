@@ -43,6 +43,27 @@ paths:
                 $ref: '#/components/schemas/SeriesResponse'
 components:
   parameters:
+    Frequency:
+      name: frequency
+      in: query
+      description: Periodicity of returned data (annual, monthly, quarterly, daily).
+      required: false
+      schema:
+        type: string
+        enum:
+        - annual
+        - quarterly
+        - monthly
+        - weekly
+        - daily
+        - hourly
+    Start:
+      name: start
+      in: query
+      description: Inclusive start of the date range (format depends on frequency, e.g. YYYY-MM-DD).
+      required: false
+      schema:
+        type: string
     Length:
       name: length
       in: query
@@ -63,27 +84,6 @@ components:
       name: end
       in: query
       description: Inclusive end of the date range (format depends on frequency, e.g. YYYY-MM-DD).
-      required: false
-      schema:
-        type: string
-    Frequency:
-      name: frequency
-      in: query
-      description: Periodicity of returned data (annual, monthly, quarterly, daily).
-      required: false
-      schema:
-        type: string
-        enum:
-        - annual
-        - quarterly
-        - monthly
-        - weekly
-        - daily
-        - hourly
-    Start:
-      name: start
-      in: query
-      description: Inclusive start of the date range (format depends on frequency, e.g. YYYY-MM-DD).
       required: false
       schema:
         type: string
