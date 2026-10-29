@@ -1,4 +1,4 @@
-# Energy Information Administration (energy-information-administration)
+# Energy Information Administration
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,61 +66,134 @@
 
 The U.S. Energy Information Administration (EIA) is committed to its free and open data by making it available through an Application Programming Interface (API) and its open data tools. The EIA Open Data API v2 is multi-faceted and contains time-series datasets organized by the main energy categories, including electricity, natural gas, petroleum, coal, nuclear, renewables, total energy, international energy statistics, the State Energy Data System (SEDS), and CO2 emissions aggregates.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/energy-information-administration/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/energy-information-administration/refs/heads/main/apis.yml)
+**Areas:** Energy · Federal Government · Open Data
 
-## Scope
+## Energy Information Administration on APIs.io
 
-- **Position:** Consumer
-- **Access:** 3rd-Party
+Everything profiled for Energy Information Administration is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/energy-information-administration/](https://apis.io/providers/energy-information-administration/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (10)
 
-- Energy
-- Federal Government
-- Open Data
+- [Energy Information Administration CO2 Emissions API](https://apis.io/apis/energy-information-administration/energy-information-administration-co2-emissions-api/) — CO2 emissions aggregates by state and sector.
+- [Energy Information Administration Coal API](https://apis.io/apis/energy-information-administration/energy-information-administration-coal-api/) — Coal production, shipments, consumption, and trade data.
+- [Energy Information Administration Discovery API](https://apis.io/apis/energy-information-administration/energy-information-administration-discovery-api/) — Browse the API tree to discover available routes, facets, and metadata.
+- [Energy Information Administration Electricity API](https://apis.io/apis/energy-information-administration/energy-information-administration-electricity-api/) — Electricity generation, retail sales, and balancing authority data.
+- [Energy Information Administration International API](https://apis.io/apis/energy-information-administration/energy-information-administration-international-api/) — International energy statistics and projections.
+- [Energy Information Administration Natural Gas API](https://apis.io/apis/energy-information-administration/energy-information-administration-natural-gas-api/) — Natural gas production, prices, storage, and trade data.
+- [Energy Information Administration Nuclear API](https://apis.io/apis/energy-information-administration/energy-information-administration-nuclear-api/) — Nuclear plant generator outage data.
+- [Energy Information Administration Petroleum API](https://apis.io/apis/energy-information-administration/energy-information-administration-petroleum-api/) — Crude oil reserves, refining, consumption, and stocks data.
+- [Energy Information Administration SEDS API](https://apis.io/apis/energy-information-administration/energy-information-administration-seds-api/) — State Energy Data System.
+- [Energy Information Administration Total Energy API](https://apis.io/apis/energy-information-administration/energy-information-administration-total-energy-api/) — Comprehensive energy summaries across all sources.
 
-## Timestamps
+### Published properties
 
-- **Created:** 2024-12-03
-- **Modified:** 2026-05-19
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Agentic access (1)
 
-### EIA Open Data API
+Which operations an agent can call, which act, and which need a human in the loop.
 
-The EIA Open Data API v2 provides programmatic access to free U.S. energy time-series data through a hierarchical route structure organized by energy category. An API key is required (free registration) and is passed as a URL query parameter on every request. Responses include rich metadata for navigating child routes, facets, frequencies, and available data columns. The API supports JSON (default) and XML output, with up to 5,000 rows per request for JSON and 300 rows for XML.
+- [Energy Information Administration Agentic Access](https://apis.io/agentic-access/energy-information-administration/energy-information-administration-agentic-access/)
 
-- **Human URL:** [https://www.eia.gov/opendata/](https://www.eia.gov/opendata/)
-- **Base URL:** `https://api.eia.gov/v2`
+#### Collections (11)
 
-#### Tags
+Postman and Open Collection request collections.
 
-- Energy
-- Federal Government
-- Open Data
-- Time Series
+- [U.S. Energy Information Administration Open Data CO2 Emissions API](https://apis.io/collections/energy-information-administration/open-energy-information-administration-co2-emissions-api/)
+- [U.S. Energy Information Administration Open Data CO2 Emissions Coal API](https://apis.io/collections/energy-information-administration/open-energy-information-administration-coal-api/)
+- [U.S. Energy Information Administration Open Data CO2 Emissions Discovery API](https://apis.io/collections/energy-information-administration/open-energy-information-administration-discovery-api/)
+- [U.S. Energy Information Administration Open Data CO2 Emissions Electricity API](https://apis.io/collections/energy-information-administration/open-energy-information-administration-electricity-api/)
+- [U.S. Energy Information Administration Open Data CO2 Emissions International API](https://apis.io/collections/energy-information-administration/open-energy-information-administration-international-api/)
+- [U.S. Energy Information Administration Open Data CO2 Emissions Natural Gas API](https://apis.io/collections/energy-information-administration/open-energy-information-administration-natural-gas-api/)
+- [U.S. Energy Information Administration Open Data CO2 Emissions Nuclear API](https://apis.io/collections/energy-information-administration/open-energy-information-administration-nuclear-api/)
+- [U.S. Energy Information Administration Open Data API](https://apis.io/collections/energy-information-administration/open-energy-information-administration-open-data-api/)
+- [U.S. Energy Information Administration Open Data CO2 Emissions Petroleum API](https://apis.io/collections/energy-information-administration/open-energy-information-administration-petroleum-api/)
+- [U.S. Energy Information Administration Open Data CO2 Emissions SEDS API](https://apis.io/collections/energy-information-administration/open-energy-information-administration-seds-api/)
+- [U.S. Energy Information Administration Open Data CO2 Emissions Total Energy API](https://apis.io/collections/energy-information-administration/open-energy-information-administration-total-energy-api/)
 
-#### Properties
+#### Security (2)
 
-- [Documentation](https://www.eia.gov/opendata/)
-- [A P I  Browser](https://www.eia.gov/opendata/browser/)
-- [Sign Up](https://www.eia.gov/opendata/register.php)
-- [OpenAPI](openapi/energy-information-administration-open-data-api-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/energy-information-administration-open-data-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/energy-information-administration-open-data-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+Authentication, trust centre, and vulnerability disclosure.
 
-## Common Properties
+- [Energy Information Administration Authentication](https://apis.io/security/energy-information-administration/energy-information-administration-authentication/)
+- [Energy Information Administration Domain Security](https://apis.io/security/energy-information-administration/energy-information-administration-domain-security/)
 
-- [GitHub Organization](https://github.com/eiagov)
-- [LinkedIn](https://www.linkedin.com/company/u-s-energy-information-administration)
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Energy Information Administration Plans Pricing](https://apis.io/plans/energy-information-administration/energy-information-administration-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Energy Information Administration Rate Limits](https://apis.io/rate-limits/energy-information-administration/energy-information-administration-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Energy Information Administration Finops](https://apis.io/finops/energy-information-administration/energy-information-administration-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
 - [Website](https://www.eia.gov)
 - [Documentation](https://www.eia.gov/opendata/)
-- [A P I  Browser](https://www.eia.gov/opendata/browser/)
-- [Sign Up](https://www.eia.gov/opendata/register.php)
-- [Bulk  Downloads](https://www.eia.gov/opendata/bulkfiles.php)
-- [Excel  Add-in](https://www.eia.gov/opendata/excel/)
+- [Blog](https://www.eia.gov/rss/todayinenergy.xml)
+- [GitHub](https://github.com/eiagov)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 27.0** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 57.1 |
+| Contract quality | 44.7 |
+| Contract governance | 0.0 |
+| Operational transparency | 10.5 |
+| Developer ergonomics | 23.8 |
+| Access clarity | 21.1 |
+
+**Agent readiness 20.7** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | na |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | na |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | na |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 11.8** — Government & Public Sector
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/energy-information-administration/](https://apis.io/providers/energy-information-administration/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Energy Information Administration: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/energy-information-administration/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
